@@ -80,3 +80,8 @@ fabric.properties
 
 # hide all IDE files
 .idea
+
+
+#appsettings
+appsettings.json
+appsettings.Development.json
