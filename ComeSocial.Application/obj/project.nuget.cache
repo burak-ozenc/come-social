@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8TfYlTnUPMGKM4nwLQ++7k/67schBxG8E4IjU+7u5YZH52efaygxI5gam5Bk0MOQUDeDpBzoEddPoYHgB4G6Xg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Application\\ComeSocial.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1a2fDk7J1q5jSrvdFWut2X1elSMSbQANHte4xVh1o4o=",
+  "Source": "ComeSocial.Api",
+  "BasePath": "_content/ComeSocial.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

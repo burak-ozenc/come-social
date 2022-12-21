@@ -1,0 +1,15 @@
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\bin\Debug\net6.0\ComeSocial.Application.deps.json
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\bin\Debug\net6.0\ComeSocial.Application.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\bin\Debug\net6.0\ComeSocial.Application.pdb
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\bin\Debug\net6.0\ComeSocial.Domain.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\bin\Debug\net6.0\ComeSocial.Domain.pdb
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ComeSocial.Application.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ComeSocial.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ComeSocial.Application.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ComeSocial.Application.AssemblyInfo.cs
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ComeSocial.Application.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ComeSocial.Application.csproj.CopyComplete
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ComeSocial.Application.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\refint\ComeSocial.Application.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ComeSocial.Application.pdb
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Application\obj\Debug\net6.0\ref\ComeSocial.Application.dll
