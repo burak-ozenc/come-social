@@ -1,55 +1,53 @@
-using ComeSocial.Application.Authentication;
+using ComeSocial.Application.Authentication.Commands.Register;
+using ComeSocial.Application.Authentication.Common;
 using ComeSocial.Contracts.Authentication;
+using ComeSocial.Domain.Common.Errors;
+using ErrorOr;
+using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
+using MediatR;
 
 namespace ComeSocial.Api.Controllers;
 
-[ApiController]
-[Route("auth")]
-public class AuthenticationController : ControllerBase
-{
-    private readonly IAuthenticationService _authenticationService;
 
-    public AuthenticationController(IAuthenticationService authenticationService)
+[Route("auth")]
+public class AuthenticationController : ApiController
+{
+    private readonly ISender _mediator;
+    private readonly IMapper _mapper;
+
+    public AuthenticationController( ISender mediator, IMapper mapper)
     {
-        _authenticationService = authenticationService;
+        _mediator = mediator;
+        _mapper = mapper;
     }
 
     [HttpPost("register")]
-    public IActionResult Register(RegisterRequest request)
+    public async Task<IActionResult> Register(RegisterRequest request)
     {
-        var authResult = _authenticationService.Register(
-            request.FirstName,
-            request.LastName,
-            request.Email,
-            request.Password
-        );
+        var command = _mapper.Map<RegisterCommand>(request);
+        ErrorOr<AuthenticationResult> registerResult = await _mediator.Send(command);
 
-        var response = new AuthenticationResponse(
-            authResult.Id,
-            authResult.FirstName,
-            authResult.LastName,
-            authResult.Email,
-            authResult.Token
+        return registerResult.Match(
+            registerResult => Ok(_mapper.Map<AuthenticationResponse>(registerResult)),
+            errors => Problem(errors)
         );
-        return Ok(response);
     }
 
     [HttpPost("login")]
-    public IActionResult Login(LoginRequest request)
+    public async Task<IActionResult> Login(LoginRequest request)
     {
-        var loginResult = _authenticationService.Login(
-            request.Email,
-            request.Password
-        );
+        var query = _mapper.Map<LoginQuery>(request);
+        
+        ErrorOr<AuthenticationResult> loginResult = await _mediator.Send(query);
+        if (loginResult.IsError && loginResult.FirstError == ErrorsAuthentication.Authentication.InvalidCredentials)
+        {
+            return loginResult.Match(
+                loginResult => Ok(_mapper.Map<AuthenticationResponse>(loginResult)),
+                errors => Problem(errors)
+            );
+        }
 
-        var response = new AuthenticationResponse(
-            loginResult.Id,
-            loginResult.FirstName,
-            loginResult.LastName,
-            loginResult.Email,
-            loginResult.Token
-        );
-        return Ok(response);
+        return Ok(loginResult);
     }
 }

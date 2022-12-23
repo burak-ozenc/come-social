@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "8TfYlTnUPMGKM4nwLQ++7k/67schBxG8E4IjU+7u5YZH52efaygxI5gam5Bk0MOQUDeDpBzoEddPoYHgB4G6Xg==",
+  "dgSpecHash": "kdWpCvQq+CBgaKYp1yjRodJqk8eAEmmREmpoAsfKGYDRPA3SHXwgL6SQ0WNYklTpD4Hil1GJZJKEYg1ecDIdmg==",
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Application\\ComeSocial.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+    "C:\\Users\\LENOVO\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\fluentresults\\3.15.1\\fluentresults.3.15.1.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.1\\microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\oneof\\3.0.223\\oneof.3.0.223.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }
