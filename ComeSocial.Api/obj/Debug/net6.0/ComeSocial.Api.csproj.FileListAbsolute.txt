@@ -34,3 +34,13 @@ C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.Id
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\OneOf.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\ErrorOr.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\FluentResults.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\MediatR.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Mapster.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Mapster.Core.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Mapster.DependencyInjection.dll

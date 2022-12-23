@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZsgUGSgngwFEproITC1103B++aj2Wh+EMnmFNKacbvNOM9d1l176gp4kLIaH35WuJM+WMvVGVASds/J0uogoFQ==",
+  "dgSpecHash": "lkYQyEucxlvO6bPfjeIBmDOKtAZ1tKR2A9s/6+KaGc2OmvMXhIumq30p+kBkImQGqkA873jsYuxpqoNL3vSXaA==",
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Domain\\ComeSocial.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512"
+  ],
   "logs": []
 }
