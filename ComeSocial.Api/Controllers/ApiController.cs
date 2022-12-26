@@ -1,5 +1,6 @@
 ﻿using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ComeSocial.Api.Controllers;
 
@@ -9,10 +10,20 @@ public class ApiController : ControllerBase
     // GET
     protected IActionResult Problem(List<Error> errors)
     {
+        if (errors.Count == 0) return Problem();
+        if (errors.All(error => error.Type == ErrorType.Validation))
+        {
+            return ValidationProblem(errors);
+        }
         HttpContext.Items["errors"] = errors;
         var firstError = errors[0];
 
-        var statusCode = firstError.Type switch
+        return Problem(firstError);
+    }
+
+    private IActionResult Problem(Error error)
+    {
+        var statusCode = error.Type switch
         {
             ErrorType.Conflict => (int)StatusCodes.Status409Conflict,
             ErrorType.Validation => (int)StatusCodes.Status400BadRequest,
@@ -20,5 +31,18 @@ public class ApiController : ControllerBase
             _ => (int)StatusCodes.Status500InternalServerError
         };
         return Problem();
+    }
+
+    private IActionResult ValidationProblem(List<Error> errors)
+    {
+        var modelStateDictionary = new ModelStateDictionary();
+        foreach (var error in errors)
+        {
+            modelStateDictionary.AddModelError(
+                error.Code,
+                error.Description);
+        }
+
+        return ValidationProblem(modelStateDictionary);
     }
 }
