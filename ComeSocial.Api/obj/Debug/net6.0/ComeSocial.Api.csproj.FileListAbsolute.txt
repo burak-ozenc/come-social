@@ -44,3 +44,7 @@ C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\MediatR.Exte
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Mapster.dll
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Mapster.Core.dll
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Mapster.DependencyInjection.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\obj\Debug\net6.0\ComeSocial.Api.MvcApplicationPartsAssemblyInfo.cs
