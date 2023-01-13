@@ -37,17 +37,27 @@ public class AuthenticationController : ApiController
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginRequest request)
     {
-        var query = _mapper.Map<LoginQuery>(request);
-        
-        ErrorOr<AuthenticationResult> loginResult = await _mediator.Send(query);
-        if (loginResult.IsError && loginResult.FirstError == ErrorsAuthentication.Authentication.InvalidCredentials)
+        try
         {
-            return loginResult.Match(
-                loginResult => Ok(_mapper.Map<AuthenticationResponse>(loginResult)),
-                errors => Problem(errors)
-            );
-        }
 
-        return Ok(loginResult);
+
+            var query = _mapper.Map<LoginQuery>(request);
+
+            ErrorOr<AuthenticationResult> loginResult = await _mediator.Send(query);
+            if (loginResult.IsError)
+            {
+                return loginResult.Match(
+                    loginResult => Ok(_mapper.Map<AuthenticationResponse>(loginResult)),
+                    errors => Problem(errors)
+                );
+            }
+
+            return Ok(loginResult);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }
