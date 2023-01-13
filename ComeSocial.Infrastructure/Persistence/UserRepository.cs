@@ -5,7 +5,7 @@ namespace ComeSocial.Infrastructure.Persistence;
 
 public class UserRepository : IUserRepository
 {
-    private static readonly List<User> _users = new();
+    private static List<User> _users = new List<User>();
     
     public void  AddUser(User user)
     {

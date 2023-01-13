@@ -10,15 +10,15 @@ public class ApiController : ControllerBase
     // GET
     protected IActionResult Problem(List<Error> errors)
     {
-        if (errors.Count == 0) return Problem();
+        if (errors?.Count == 0) return Problem();
         if (errors.All(error => error.Type == ErrorType.Validation))
         {
             return ValidationProblem(errors);
         }
-        HttpContext.Items["errors"] = errors;
-        var firstError = errors[0];
+        // HttpContext.Items["errors"] = errors;
+        // var firstError = errors[0];
 
-        return Problem(firstError);
+        return Problem();
     }
 
     private IActionResult Problem(Error error)

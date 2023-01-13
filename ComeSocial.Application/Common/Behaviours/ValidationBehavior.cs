@@ -13,7 +13,7 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
     where TResponse : IErrorOr
 {
     private readonly IValidator<TRequest>? _validator;
-    // private IPipelineBehavior<RegisterCommand, ErrorOr<AuthenticationResult>> _pipelineBehaviorImplementation;
+    
     public ValidationBehavior(IValidator<TRequest>? validator = null)
     {
         _validator = validator;
