@@ -144,6 +144,10 @@
             "ErrorOr": {
               "target": "Package",
               "version": "[1.2.1, )"
+            },
+            "Neo4jClient": {
+              "target": "Package",
+              "version": "[5.1.3, )"
             }
           },
           "imports": [
@@ -213,6 +217,14 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.13, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",

@@ -1,6 +1,6 @@
 ﻿namespace ComeSocial.Application.Common.Interfaces.Persistence;
 
-public interface IEventRepository
+public interface ISocialEventRepository
 {
-    void Add(Domain.Event.Event @event);
+    void Add(Domain.SocialEvent.SocialEvent socialEvent);
 }

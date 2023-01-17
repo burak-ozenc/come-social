@@ -24,6 +24,9 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
         RequestHandlerDelegate<TResponse> next, 
         CancellationToken cancellationToken)
     {
+        if (_validator is null)
+            return await next();
+        
         var validationResult = await _validator.ValidateAsync(request, cancellationToken);
 
         if (validationResult is null)

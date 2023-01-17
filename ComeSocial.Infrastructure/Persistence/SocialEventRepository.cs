@@ -1,6 +1,13 @@
-﻿namespace ComeSocial.Infrastructure.Persistence;
+﻿using ComeSocial.Application.Common.Interfaces.Persistence;
+using ComeSocial.Domain.SocialEvent;
 
-public class MenuRepository : I
+namespace ComeSocial.Infrastructure.Persistence;
+
+public class SocialEventRepository :ISocialEventRepository
 {
-    public void Add()
+    private static readonly List<SocialEvent> _socialEvents = new();
+    public void Add(SocialEvent socialEvent)
+    {
+        _socialEvents.Add(socialEvent);
+    }
 }

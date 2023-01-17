@@ -1,10 +1,10 @@
 ﻿namespace ComeSocial.Domain.Common.Enums;
 
-public enum EventTypes
+public enum SocialEventTypes
 {
-    Concert,
-    Theatre = 1,
-    Cinema = 2
+    Concert = 1,
+    Theatre = 2,
+    Cinema = 3
 }
 
 public enum Concert

@@ -1,6 +1,4 @@
 ﻿using System.Reflection;
-using ComeSocial.Application.Authentication.Commands.Register;
-using ComeSocial.Application.Authentication.Common;
 using ComeSocial.Application.Common.Behaviours;
 using FluentValidation;
 using MediatR;
