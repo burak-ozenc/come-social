@@ -1,6 +1,6 @@
 ﻿using ComeSocial.Domain.Common.Models;
 
-namespace ComeSocial.Domain.Event.ValueObjects;
+namespace ComeSocial.Domain.SocialEvent.ValueObjects;
 
 public sealed class EventTypeId : ValueObject
 {

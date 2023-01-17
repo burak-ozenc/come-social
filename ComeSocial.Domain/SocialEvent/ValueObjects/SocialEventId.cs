@@ -1,17 +1,17 @@
 ﻿using ComeSocial.Domain.Common.Models;
 
-namespace ComeSocial.Domain.Event.ValueObjects;
+namespace ComeSocial.Domain.SocialEvent.ValueObjects;
 
-public sealed class EventId : ValueObject
+public sealed class SocialEventId : ValueObject
 {
     public Guid Value { get; }
 
-    private EventId(Guid value)
+    private SocialEventId(Guid value)
     {
         Value = value;
     }
 
-    public static EventId CreateUnique() => new(Guid.NewGuid());
+    public static SocialEventId CreateUnique() => new(Guid.NewGuid());
     
     
     public override IEnumerable<object> GetEqualityComponents()

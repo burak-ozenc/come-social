@@ -1,5 +1,5 @@
 ﻿using ComeSocial.Domain.Common.Models;
-using ComeSocial.Domain.Event.ValueObjects;
+using ComeSocial.Domain.SocialEvent.ValueObjects;
 using ComeSocial.Domain.Group.ValueObjects;
 
 
@@ -7,39 +7,44 @@ namespace ComeSocial.Domain.Group;
 
 public sealed class Group : AggregateRoot<GroupId>
 {
+    // this field will be auto-filled with users' names
+    // later can be changed to mutable field
     public string Name { get; }
-    public string Description { get; }
-    public DateTime EventDate { get; }
+    public DateTime SocialEventDate { get; }
     public string GroupAvatar { get; }
-    // convert to IList or IReadOnly
+    
+    // security tips
+    // convert to IList
+    // after implementing the ef core
     public List<User.User> Users { get; }
-    public EventId EventId { get; }
+    public SocialEventId SocialEventId { get; }
     public DateTime? CreatedDateTime { get; }
     public DateTime? UpdatedDateTime { get; }
 
     public Group(GroupId groupId,
         string name,
-        string description,
         DateTime eventDate,
         string groupAvatar,
         List<User.User> users,
-        EventId eventId) : base(groupId)
+        SocialEventId socialEventId,
+        DateTime? createdDateTime,
+        DateTime? updatedDateTime) : base(groupId)
     {
         Name = name;
-        Description = description;
-        EventDate = eventDate;
+        SocialEventDate = eventDate;
         GroupAvatar = groupAvatar;
         Users = users;
-        EventId = eventId;
+        SocialEventId = socialEventId;
+        CreatedDateTime = createdDateTime;
+        UpdatedDateTime = updatedDateTime;
     }
 
     public static Group CreateGroup(GroupId groupId,
         string name,
-        string description,
         DateTime eventDate,
         string groupAvatar,
         List<User.User> users,
-        EventId eventId)
-        => new(groupId, name, description, eventDate, groupAvatar, users, eventId);
+        SocialEventId eventId)
+        => new(groupId, name, eventDate, groupAvatar, users, eventId, DateTime.Now,null);
 
 }

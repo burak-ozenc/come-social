@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ComeSocial.Api.Controllers;
 
-
 // [Authorize]
 [Route("events")]
 public class SocialEventsController : ApiController
@@ -18,20 +17,20 @@ public class SocialEventsController : ApiController
         _mediator = mediator;
         _mapper = mapper;
     }
-    
+
     [HttpGet("listEvents")]
     public IActionResult ListEvents()
     {
         return Ok(Array.Empty<string>());
     }
+
     [HttpPost("CreateEvent")]
     public async Task<IActionResult> CreateEvent(CreateSocialEventRequest request)
     {
-        // CreateEventRequest request
         var command = _mapper.Map<CreateSocialEventCommand>(request);
-        var createEventResult = await _mediator.Send(command);
         
-     
-        return Ok(createEventResult);
+        var createEventResult = await _mediator.Send(command);
+
+        return Ok(_mapper.Map<CreateSocialEventResponse>(createEventResult));
     }
 }

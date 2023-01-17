@@ -9,25 +9,20 @@ public record CreateSocialEventCommand(
     string SubHeader,
     string Description,
     DateTime? Date,
-    List<EventTypeCommand> EventTypes,
-    List<Tag>? Tags,
+    List<SocialEventTypeCommand> SocialEventTypes,
+    List<Tag> Tags,
     DateTime? CreatedDateTime,
-    DateTime? UpdatedDateTime) : IRequest<ErrorOr<Domain.SocialEvent.SocialEvent>>;
+    DateTime? UpdatedDateTime
+    ) : IRequest<Domain.SocialEvent.SocialEvent>;
 
 
-public record EventTypeCommand(
-    EventTypes Type,
+public record SocialEventTypeCommand(
+    string Name,
     List<string> SubTypes
 );
 
-public enum EventTypes
-{
-    Concert,
-    Theatre = 1,
-    Cinema = 2
-}
 
 public record Tag(
-    string Value,
+    string TagId,
     string Name
 );

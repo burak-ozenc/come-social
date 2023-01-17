@@ -1,26 +1,24 @@
 ﻿using ComeSocial.Domain.Common.Enums;
-using ComeSocial.Domain.Common.Models;
-using ComeSocial.Domain.Event.ValueObjects;
 
-namespace ComeSocial.Domain.Event.Entities;
+namespace ComeSocial.Domain.SocialEvent.Entities;
 
-public sealed class EventType 
+public sealed class SocialEventType 
 {
-    public EventTypes Name { get; }
+    public string Name { get; }
     // refactor this prop
     public List<string> SubTypes { get; }
     
 
-    public EventType(
-        EventTypes name,
+    public SocialEventType(
+        string name,
         List<string> subTypes)
     {
         Name = name;
         SubTypes = subTypes;
     }
 
-    public static EventType Create(
-        EventTypes name,
+    public static SocialEventType Create(
+        string name,
         List<string> subTypes) 
         => new(name, subTypes);
 }

@@ -1,13 +1,12 @@
 ﻿using ComeSocial.Domain.Common.Models;
-using ComeSocial.Domain.Event.Entities;
-using ComeSocial.Domain.Event.ValueObjects;
-using ComeSocial.Domain.Tag.ValueObjects;
+using ComeSocial.Domain.SocialEvent.Entities;
+using ComeSocial.Domain.SocialEvent.ValueObjects;
 
-namespace ComeSocial.Domain.Event;
+namespace ComeSocial.Domain.SocialEvent;
 
-public sealed class Event : AggregateRoot<EventId>
+public sealed class SocialEvent : AggregateRoot<SocialEventId>
 {
-    private readonly List<EventType> _eventTypes = new();
+    private readonly List<SocialEventType> _socialEventTypes = new();
     private readonly List<Tag.Tag> _tags = new();
     
     public string Name { get; }
@@ -17,41 +16,49 @@ public sealed class Event : AggregateRoot<EventId>
     public DateTime? CreatedDateTime { get; }
     public DateTime? UpdatedDateTime { get; }
 
-    public IReadOnlyList<EventType> EventTypes => _eventTypes.AsReadOnly();
+    // security tips
+    // convert to IList
+    // after implementing the ef core
+    public IReadOnlyList<SocialEventType> SocialEventTypes => _socialEventTypes.AsReadOnly();
     public IReadOnlyList<Tag.Tag> Tags => _tags.AsReadOnly();
 
-    // public EventType EventType { get; }
-    // public List<GroupId> GroupIds { get; }
-
-    private Event(EventId id, 
+    private SocialEvent(SocialEventId id, 
         string name, 
         string subHeader,
         string description,
         DateTime? date,
-        List<EventType> eventTypes,
-        List<Tag.Tag> tags 
+        List<SocialEventType> eventTypes,
+        List<Tag.Tag> tags,
+        DateTime? createdDateTime,
+        DateTime? updatedDateTime 
         ) : base(id)
     {
         Name = name;
         SubHeader = subHeader;
         Description = description;
         Date = date;
-        _eventTypes = eventTypes;
+        _socialEventTypes = eventTypes;
         _tags = tags;
+        CreatedDateTime = createdDateTime;
+        UpdatedDateTime = updatedDateTime;
     }
 
-    public static Event CreateEvent(
+    public static SocialEvent CreateEvent(
         string name,
         string subHeader,
         string description,
         DateTime? date,
-        List<EventType> eventType,
-        List<Tag.Tag> tags) 
-        => new(EventId.CreateUnique(), 
+        List<SocialEventType> eventType,
+        List<Tag.Tag> tags,
+        DateTime? createdDateTime,
+        DateTime? updatedDateTime) 
+        => new(SocialEventId.CreateUnique(), 
             name, 
             subHeader, 
             description,
             date,
             eventType,
-            tags);
+            tags,
+            DateTime.Now
+            , null);
 }
