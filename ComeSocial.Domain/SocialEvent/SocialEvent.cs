@@ -19,7 +19,7 @@ public sealed class SocialEvent : AggregateRoot<SocialEventId>
     // security tips
     // convert to IList
     // after implementing the ef core
-    public IReadOnlyList<SocialEventType> SocialEventTypes => _socialEventTypes.AsReadOnly();
+    public List<SocialEventType> SocialEventTypes => _socialEventTypes;
     public IReadOnlyList<Tag.Tag> Tags => _tags.AsReadOnly();
 
     private SocialEvent(SocialEventId id, 
@@ -59,6 +59,6 @@ public sealed class SocialEvent : AggregateRoot<SocialEventId>
             date,
             eventType,
             tags,
-            DateTime.Now
-            , null);
+            createdDateTime: DateTime.Now,
+            updatedDateTime: null);
 }

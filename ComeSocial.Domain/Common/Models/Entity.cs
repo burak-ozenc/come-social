@@ -10,20 +10,21 @@ where TId : notnull
         Id = id;
     }
 
-    public bool Equals(Entity<TId>? other)
-    {
-        return Equals((object?)other);
-    }
-
     public override bool Equals(object? obj)
     {
         return obj is Entity<TId> entity && Id.Equals(entity.Id);
+    }
+
+    public bool Equals(Entity<TId>? other)
+    {
+        return Equals((object?)other);
     }
 
     public static bool operator ==(Entity<TId> left, Entity<TId> right)
     {
         return Equals(left, right);
     }
+
     public static bool operator !=(Entity<TId> left, Entity<TId> right)
     {
         return !Equals(left, right);
