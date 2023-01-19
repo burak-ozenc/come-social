@@ -81,10 +81,10 @@ fabric.properties
 # hide all IDE files
 .idea
 
+#hide DotSettings file
+ComeSocial.sln.DotSettings.user
 
 #appsettings
 appsettings.json
 appsettings.Development.json
 
-#hide DotSettings file
-ComeSocial.sln.DotSettings.user
