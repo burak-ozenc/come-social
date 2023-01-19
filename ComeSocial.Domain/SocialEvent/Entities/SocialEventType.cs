@@ -1,8 +1,9 @@
-﻿using ComeSocial.Domain.Common.Enums;
+﻿using ComeSocial.Domain.Common.Models;
+using ComeSocial.Domain.SocialEvent.ValueObjects;
 
 namespace ComeSocial.Domain.SocialEvent.Entities;
 
-public sealed class SocialEventType 
+public sealed class SocialEventType :Entity<SocialEventTypeId>
 {
     public string Name { get; }
     // refactor this prop
@@ -10,8 +11,10 @@ public sealed class SocialEventType
     
 
     public SocialEventType(
+        SocialEventTypeId id,
         string name,
-        List<string> subTypes)
+        List<string> subTypes
+        ) : base(id)
     {
         Name = name;
         SubTypes = subTypes;
@@ -20,5 +23,8 @@ public sealed class SocialEventType
     public static SocialEventType Create(
         string name,
         List<string> subTypes) 
-        => new(name, subTypes);
+        => new(SocialEventTypeId.CreateUnique(), 
+            name, 
+            subTypes
+            );
 }

@@ -11,6 +11,7 @@
 );
 
 public record SocialEventTypeResponse(
+    string Id,
     string Name,
     List<string> SubTypes
 );

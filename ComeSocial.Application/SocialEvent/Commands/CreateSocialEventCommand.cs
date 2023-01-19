@@ -17,12 +17,13 @@ public record CreateSocialEventCommand(
 
 
 public record SocialEventTypeCommand(
+    string Id,
     string Name,
     List<string> SubTypes
 );
 
 
 public record Tag(
-    string TagId,
+    // string TagId,
     string Name
 );

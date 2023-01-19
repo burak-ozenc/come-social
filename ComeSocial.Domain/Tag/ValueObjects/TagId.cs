@@ -13,7 +13,8 @@ public class TagId : ValueObject
     }
 
     public static TagId CreateUnique() => new (Guid.NewGuid());
-    
+
+    public static TagId Create(Guid value) => new(value); 
     
     public override IEnumerable<object> GetEqualityComponents()
     {

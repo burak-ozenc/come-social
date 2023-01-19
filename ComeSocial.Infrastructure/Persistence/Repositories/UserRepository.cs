@@ -1,7 +1,7 @@
 ﻿using ComeSocial.Application.Common.Interfaces.Persistence;
 using ComeSocial.Domain.Entities;
 
-namespace ComeSocial.Infrastructure.Persistence;
+namespace ComeSocial.Infrastructure.Persistence.Repositories;
 
 public class UserRepository : IUserRepository
 {

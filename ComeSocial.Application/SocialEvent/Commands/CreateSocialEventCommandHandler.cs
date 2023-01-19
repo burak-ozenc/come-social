@@ -32,8 +32,8 @@ public class CreateSocialEventHandler : IRequestHandler<CreateSocialEventCommand
                 tag => Domain.Tag.Tag.CreateTag(
                     tag.Name
                 )).ToList(),
-            request.CreatedDateTime,
-            request?.UpdatedDateTime
+            createdDateTime: request.CreatedDateTime,
+            updatedDateTime: request?.UpdatedDateTime
         );
         _socialEventRepository.Add(socialEvent);
         return socialEvent;

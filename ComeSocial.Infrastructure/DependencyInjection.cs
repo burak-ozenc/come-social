@@ -4,6 +4,7 @@ using ComeSocial.Application.Common.Interfaces.Persistence;
 using ComeSocial.Application.Common.Interfaces.Services;
 using ComeSocial.Infrastructure.Authentication;
 using ComeSocial.Infrastructure.Persistence;
+using ComeSocial.Infrastructure.Persistence.Repositories;
 using ComeSocial.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +31,7 @@ public static class DependencyInjection
         this IServiceCollection services,
         ConfigurationManager configuration)
     {
-        services.AddDbContext<ComeSocialSQLDbContext>(options => options.UseSqlServer());
+        services.AddDbContext<ComeSocialDbContext>(options => options.UseSqlServer());
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<ISocialEventRepository, SocialEventRepository>();
 

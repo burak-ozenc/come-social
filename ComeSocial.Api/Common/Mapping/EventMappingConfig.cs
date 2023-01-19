@@ -16,8 +16,8 @@ public class SocialEventMappingConfig : IRegister
                 .Map(dest => dest.Description, src => src.Description)
                 .Map(dest => dest.SubHeader, src => src.SubHeader)
                 .Map(dest => dest.Date, src => src.Date)
-                .Map(dest => dest.Tags, src => src.Tags)
-                .Map(dest => dest.SocialEventTypes, src => src.SocialEventTypes);
+                .Map(dest => dest.Tags, src => src.Tags);
+            // .Map(dest => dest.SocialEventTypes, src => src.SocialEventTypes);
 
             config.NewConfig<SocialEvent, CreateSocialEventResponse>()
                 .Map(dest => dest.Id, src => src.Id.Value)
@@ -27,14 +27,11 @@ public class SocialEventMappingConfig : IRegister
                 .Map(dest => dest.Date, src => src.Date)
                 .Map(dest => dest.CreatedDateTime, src => src.CreatedDateTime)
                 .Map(dest => dest.UpdatedDateTime, src => src.UpdatedDateTime)
-                .Map(dest => dest.Tags, src 
+                .Map(dest => dest.Tags, src
                     => src.Tags
-                        .Select(tags =>
-                                tags
-                            // new { TagId = tags., Name = tags.Name }
-                        )
+                        .Select(tags => tags)
                         .ToList())
-                .Map(dest => dest.SocialEventTypes, src 
+                .Map(dest => dest.SocialEventTypes, src
                     => src.SocialEventTypes
                         .Select(events => events)
                         .ToList());
@@ -42,10 +39,11 @@ public class SocialEventMappingConfig : IRegister
             config.NewConfig<Domain.Tag.Tag, TagResponse>()
                 .Map(dest => dest.Name, src => src.Name)
                 .Map(dest => dest.Id, src => src.Id.Value);
-            
+
             config.NewConfig<SocialEventType, SocialEventTypeResponse>()
-                .Map(dest => dest.Name, src => src.Name)
-                .Map(dest => dest.SubTypes, src => src.SubTypes);
+            .Map(dest => dest.Id, src => src.Id.Value)
+            .Map(dest => dest.Name, src => src.Name)
+            .Map(dest => dest.SubTypes, src => src.SubTypes);
         }
         catch (Exception e)
         {
