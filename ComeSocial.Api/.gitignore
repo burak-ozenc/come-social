@@ -86,5 +86,5 @@ fabric.properties
 appsettings.json
 appsettings.Development.json
 
-#DotSettings
+#hide DotSettings file
 ComeSocial.sln.DotSettings.user
