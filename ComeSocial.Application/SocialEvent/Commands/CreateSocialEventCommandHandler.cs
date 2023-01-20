@@ -23,19 +23,13 @@ public class CreateSocialEventHandler : IRequestHandler<CreateSocialEventCommand
             subHeader: request.SubHeader,
             description: request.Description,
             date: request.Date,
-            request.SocialEventTypes.Select(
-                type => SocialEventType.Create(
-                    type.Name,
-                    type.SubTypes
-                )).ToList(),
-            request.Tags.Select(
-                tag => Domain.Tag.Tag.CreateTag(
-                    tag.Name
-                )).ToList(),
+            request.SocialEventTypes.Select(type => type)
+                .ToList(),
+            request.Tags.Select(tag => tag).ToList(),
             createdDateTime: request.CreatedDateTime,
             updatedDateTime: request?.UpdatedDateTime
         );
-        _socialEventRepository.Add(socialEvent);
+        // _socialEventRepository.Add(socialEvent);
         return socialEvent;
     }
 }

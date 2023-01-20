@@ -5,9 +5,9 @@ namespace ComeSocial.Domain.Tag;
 
 public sealed class Tag : AggregateRoot<TagId>
 {
-    public string Name { get; }
-    public DateTime? CreatedDateTime { get; }
-    public DateTime? UpdatedDateTime { get; }
+    public string Name { get; private set; }
+    public DateTime? CreatedDateTime { get; private set; }
+    public DateTime? UpdatedDateTime { get; private set; }
 
     private Tag(TagId id, string name) : base(id)
     {
@@ -18,4 +18,6 @@ public sealed class Tag : AggregateRoot<TagId>
     {
         return new(TagId.CreateUnique(), name);
     }
+    
+    private Tag(){}
 }

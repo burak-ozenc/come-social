@@ -13,7 +13,7 @@ public sealed class SocialEventId : ValueObject
 
     public static SocialEventId CreateUnique() => new(Guid.NewGuid());
 
-    public static SocialEventId Create(Guid value) => new(value);
+    public static SocialEventId Create(Guid value) => new SocialEventId(value);
 
     public override IEnumerable<object> GetEqualityComponents()
     {

@@ -1,6 +1,4 @@
 ﻿using MediatR;
-using ErrorOr;
-
 
 namespace ComeSocial.Application.SocialEvent.Commands;
 
@@ -8,9 +6,9 @@ public record CreateSocialEventCommand(
     string Name,
     string SubHeader,
     string Description,
-    DateTime? Date,
-    List<SocialEventTypeCommand> SocialEventTypes,
-    List<Tag> Tags,
+    DateTime Date,
+    List<string> SocialEventTypes,
+    List<string> Tags,
     DateTime? CreatedDateTime,
     DateTime? UpdatedDateTime
     ) : IRequest<Domain.SocialEvent.SocialEvent>;
