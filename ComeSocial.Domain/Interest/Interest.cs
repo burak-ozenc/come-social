@@ -8,10 +8,10 @@ public sealed class Interest : AggregateRoot<InterestId>
 {
     private readonly List<Tag.Tag> _tags = new();
     
-    public string Name { get;  }
+    public string Name { get; private set;  }
     public IReadOnlyList<Tag.Tag> Tags => _tags.AsReadOnly();
-    public DateTime? CreatedDateTime { get;  }
-    public DateTime? UpdatedDateTime { get;  }
+    public DateTime? CreatedDateTime { get; private set;  }
+    public DateTime? UpdatedDateTime { get; private set;  }
     
     public Interest(
         InterestId id,
@@ -40,4 +40,5 @@ public sealed class Interest : AggregateRoot<InterestId>
             createdDateTime,
             updatedDateTime
         );
+    private Interest(){}
 }

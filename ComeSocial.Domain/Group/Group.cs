@@ -9,17 +9,17 @@ public sealed class Group : AggregateRoot<GroupId>
 {
     // this field will be auto-filled with users' names
     // later can be changed to mutable field
-    public string Name { get; }
-    public DateTime SocialEventDate { get; }
-    public string GroupAvatar { get; }
+    public string Name { get; private set; }
+    public DateTime SocialEventDate { get; private set; }
+    public string GroupAvatar { get; private set; }
     
     // security tips
     // convert to IList
     // after implementing the ef core
-    public List<User.User> Users { get; }
-    public SocialEventId SocialEventId { get; }
-    public DateTime? CreatedDateTime { get; }
-    public DateTime? UpdatedDateTime { get; }
+    public List<User.User> Users { get; private set; }
+    public SocialEventId SocialEventId { get; private set; }
+    public DateTime? CreatedDateTime { get; private set; }
+    public DateTime? UpdatedDateTime { get; private set; }
 
     public Group(GroupId groupId,
         string name,
@@ -47,4 +47,5 @@ public sealed class Group : AggregateRoot<GroupId>
         SocialEventId eventId)
         => new(groupId, name, eventDate, groupAvatar, users, eventId, DateTime.Now,null);
 
+    private Group(){}
 }

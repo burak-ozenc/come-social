@@ -34,4 +34,5 @@ where TId : notnull
     {
         return Id.GetHashCode();
     }
+    protected Entity() {}
 }

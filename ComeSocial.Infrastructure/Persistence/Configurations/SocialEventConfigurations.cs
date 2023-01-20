@@ -34,33 +34,40 @@ public class MenuConfigurations : IEntityTypeConfiguration<SocialEvent>
     
     private void ConfigureTagsTable(EntityTypeBuilder<SocialEvent> builder)
     {
-        builder.OwnsMany(e => e.Tags, tb =>
-            {
-                tb.ToTable("Tags");
-                tb.WithOwner().HasForeignKey("SocialEventId");
+        builder.OwnsMany(se => se.SocialEventTypes, et =>
+        {
+            et.ToTable("SocialEventTags");
 
-                tb.HasKey("Id", "SocialEventId");
+            et.WithOwner().HasForeignKey("TagId");
 
-                tb.Property(t => t.Id)
-                    .HasColumnName("TagsId")
-                    .ValueGeneratedNever()
-                    .HasConversion(
-                        id => id.Value,
-                        value => TagId.Create(value)
-                    );
-                tb.Property(t => t.Name)
-                    .HasMaxLength(100);
-            }
-        );
-        builder.ToTable("Tags");
+            et.HasKey("Id");
 
-        builder.HasKey(t => t.Id);
+            et.Property(se => se)
+                .HasColumnName("TagId");
+        });
+        
+        builder.Metadata
+            .FindNavigation(nameof(SocialEvent.SocialEventTypes))!
+            .SetPropertyAccessMode(PropertyAccessMode.Field);
     }
 
-    public void ConfigureSocialEventTypes(EntityTypeBuilder<SocialEvent> builder)
+    private void ConfigureSocialEventTypes(EntityTypeBuilder<SocialEvent> builder)
     {
-        builder.ToTable("SocialEventTypes");
+        builder.OwnsMany(se => se.Tags, et =>
+        {
+            et.ToTable("SocialEventTypes");
 
-        builder.HasKey(t => t.Id.Value);
+            et.WithOwner().HasForeignKey("SocialEventId");
+
+            et.HasKey("Id");
+
+            et.Property(se => se)
+                .HasColumnName("SocialEventTypeId");
+        });
+        
+        builder.Metadata
+            .FindNavigation(nameof(SocialEvent.SocialEventTypes))!
+            .SetPropertyAccessMode(PropertyAccessMode.Field);
     }
+    
 }

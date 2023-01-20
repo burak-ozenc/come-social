@@ -4,8 +4,8 @@
     string SubHeader,
     string Description,
     DateTime? Date,
-    List<SocialEventTypeResponse> SocialEventTypes,
-    List<TagResponse> Tags,
+    List<string> SocialEventTypes,
+    List<string> Tags,
     DateTime? CreatedDateTime,
     DateTime? UpdatedDateTime
 );

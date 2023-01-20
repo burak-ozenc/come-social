@@ -6,29 +6,29 @@ namespace ComeSocial.Domain.SocialEvent;
 
 public sealed class SocialEvent : AggregateRoot<SocialEventId>
 {
-    private readonly List<SocialEventType> _socialEventTypes = new();
-    private readonly List<Tag.Tag> _tags = new();
+    private readonly List<string> _socialEventTypes = new();
+    private readonly List<string> _tags = new();
     
-    public string Name { get; }
-    public string SubHeader { get; }
-    public string Description { get; }
-    public DateTime? Date { get; }
-    public DateTime? CreatedDateTime { get; }
-    public DateTime? UpdatedDateTime { get; }
+    public string Name { get; private set; }
+    public string SubHeader { get; private set; }
+    public string Description { get; private set; }
+    public DateTime Date { get; private set; }
+    public DateTime? CreatedDateTime { get; private set; }
+    public DateTime? UpdatedDateTime { get; private set; }
 
     // security tips
     // convert to IList
     // after implementing the ef core
-    public List<SocialEventType> SocialEventTypes => _socialEventTypes;
-    public IReadOnlyList<Tag.Tag> Tags => _tags.AsReadOnly();
+    public List<string> SocialEventTypes => _socialEventTypes;
+    public IReadOnlyList<string> Tags => _tags.AsReadOnly();
 
     private SocialEvent(SocialEventId id, 
         string name, 
         string subHeader,
         string description,
-        DateTime? date,
-        List<SocialEventType> eventTypes,
-        List<Tag.Tag> tags,
+        DateTime date,
+        List<string> eventTypes,
+        List<string> tags,
         DateTime? createdDateTime,
         DateTime? updatedDateTime 
         ) : base(id)
@@ -47,9 +47,9 @@ public sealed class SocialEvent : AggregateRoot<SocialEventId>
         string name,
         string subHeader,
         string description,
-        DateTime? date,
-        List<SocialEventType> eventType,
-        List<Tag.Tag> tags,
+        DateTime date,
+        List<string> eventType,
+        List<string> tags,
         DateTime? createdDateTime,
         DateTime? updatedDateTime) 
         => new(SocialEventId.CreateUnique(), 
@@ -61,4 +61,7 @@ public sealed class SocialEvent : AggregateRoot<SocialEventId>
             tags,
             createdDateTime: DateTime.Now,
             updatedDateTime: null);
+    
+    private SocialEvent(){}
+    
 }

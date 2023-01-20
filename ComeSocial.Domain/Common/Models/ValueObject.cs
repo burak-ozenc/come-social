@@ -35,15 +35,6 @@ public abstract class ValueObject : IEquatable<ValueObject>
     {
         return Equals((object?)other);
     }
-}
-
-public class Tag : ValueObject
-{
-    public string Name { get; private set; }
     
-    public override IEnumerable<object> GetEqualityComponents()
-    {
-        throw new NotImplementedException();
-    }
+    protected ValueObject(){}
 }
-

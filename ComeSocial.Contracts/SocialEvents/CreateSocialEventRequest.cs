@@ -4,6 +4,6 @@ public record CreateSocialEventRequest(
     string SubHeader,
     string Description,
     DateTime? Date,
-    List<SocialEventTypeResponse> SocialEventTypes,
-    List<TagResponse>? Tags
+    List<string> SocialEventTypes,
+    List<string>? Tags
 );
