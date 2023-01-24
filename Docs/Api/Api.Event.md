@@ -15,28 +15,14 @@ POST /events/createEvent
   "date": "2015-05-16T05:50:06.7199222-04:00",
   "socialEventTypes": [
     {
-      "name": "concert",
-      "subTypes": [
-        "electronic",
-        "dancel"
-      ]
-    },
-    {
-      "name": "musika",
-      "subTypes": [
-        "electronic",
-        "dance"
-      ]
+      "id": "706e8fd1-e81f-4478-86d6-f705a187b2fc",
+      "name": "concert"
     }
   ],
   "tags": [
     {
-      "name": "dance",
-      "id": "00000000-0000-0000-0000-000000000000"
-    },
-    {
-      "name": "electronic",
-      "id": "00000000-0000-0000-0000-000000000000"
+      "id": "25c5eaf5-57f5-49eb-9740-5bc9b6fe6bc1",
+      "name": "electronic"
     }
   ]
 }
@@ -46,43 +32,29 @@ POST /events/createEvent
 
 ## CreateEventResponse
 ```
-200 OK
+201 OK
 ```
 
 ```json
 {
-  "id": "8613c3d7-158f-4995-800e-b9a8d9b50450",
-  "name": "Stromae",
+  "id": "7fc93629-86bc-41ce-a5b8-e92ea99943ab",
+  "name": "Stromaeeaeae",
   "subHeader": "Niceu Concerto",
   "description": "A loooong description formatted with HTML",
   "date": "2015-05-16T12:50:06.7199222+03:00",
-  "socialEventTypes": [
+  "comeEventTypes": [
     {
-      "name": "concert",
-      "subTypes": [
-        "electronic",
-        "dancel"
-      ]
-    },
-    {
-      "name": "musika",
-      "subTypes": [
-        "electronic",
-        "dance"
-      ]
+      "id": "706e8fd1-e81f-4478-86d6-f705a187b2fc",
+      "name": null
     }
   ],
   "tags": [
     {
-      "id": "0b6fe9ca-ba04-450d-a115-5658dd489de2",
-      "name": "dance"
-    },
-    {
-      "id": "14db4747-5dcd-4b6a-b7f4-4b7ba4298935",
-      "name": "electronic"
+      "id": "25c5eaf5-57f5-49eb-9740-5bc9b6fe6bc1",
+      "name": null
     }
   ],
-  "createdDateTime" :"2015-05-16T05:50:06.7199222-04:00",
-  "updatedDateTime" :"2015-05-16T05:50:06.7199222-04:00"
+  "createdDateTime": "2023-01-24T03:54:17.2071905+03:00",
+  "updatedDateTime": null
 }
 ```
