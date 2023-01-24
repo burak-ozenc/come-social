@@ -1,4 +1,6 @@
-﻿using ComeSocial.Application.SocialEvent.Commands;
+﻿using ComeSocial.Application.Contracts.SocialEvent;
+using ComeSocial.Application.SocialEvent.Commands;
+using ComeSocial.Application.SocialEvent.Commands.CreateSocialEvent;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

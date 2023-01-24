@@ -15,9 +15,7 @@ public class ApiController : ControllerBase
         {
             return ValidationProblem(errors);
         }
-        // HttpContext.Items["errors"] = errors;
-        // var firstError = errors[0];
-
+        
         return Problem();
     }
 

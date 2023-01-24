@@ -16,4 +16,6 @@ public sealed class InterestId : ValueObject
     {
         yield return Value;
     }
+    
+    private InterestId(){}
 }

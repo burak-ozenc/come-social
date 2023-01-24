@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Api", "ComeSocia
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Application", "ComeSocial.Application\ComeSocial.Application.csproj", "{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Contracts", "ComeSocial.Contracts\ComeSocial.Contracts.csproj", "{B74A46C4-46CE-4E19-B5A1-1A154D48EA9E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Domain", "ComeSocial.Domain\ComeSocial.Domain.csproj", "{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Infrastructure", "ComeSocial.Infrastructure\ComeSocial.Infrastructure.csproj", "{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}"
@@ -30,10 +28,6 @@ Global
 		{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B74A46C4-46CE-4E19-B5A1-1A154D48EA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B74A46C4-46CE-4E19-B5A1-1A154D48EA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B74A46C4-46CE-4E19-B5A1-1A154D48EA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B74A46C4-46CE-4E19-B5A1-1A154D48EA9E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU

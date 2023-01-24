@@ -17,4 +17,5 @@ public sealed class GroupId : ValueObject
     {
         yield return Value;
     }
+    private GroupId(){}
 }

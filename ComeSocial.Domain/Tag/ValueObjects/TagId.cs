@@ -14,10 +14,12 @@ public class TagId : ValueObject
 
     public static TagId CreateUnique() => new (Guid.NewGuid());
 
-    public static TagId Create(Guid value) => new(value); 
+    public static TagId Create(Guid value) => new TagId(value); 
     
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
     }
+    
+    private TagId(){}
 }

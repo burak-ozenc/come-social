@@ -1,13 +1,9 @@
-﻿using ComeSocial.Application.Authentication.Commands.Register;
-using ComeSocial.Application.Authentication.Common;
-using ErrorOr;
+﻿using ErrorOr;
 using FluentValidation;
 using MediatR;
  
 namespace ComeSocial.Application.Common.Behaviours;
 
-// public class ValidationBehaviours()
-// {
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> 
     where TRequest : IRequest<TResponse>
     where TResponse : IErrorOr
@@ -40,7 +36,5 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
                 .ToList();
         // after handler
         return (dynamic)errors;
-        // return await _pipelineBehaviorImplementation.Handle(request, next, cancellationToken);
     }
 }
-// }

@@ -1,6 +1,7 @@
 using ComeSocial.Application.Authentication.Commands.Register;
 using ComeSocial.Application.Authentication.Common;
-using ComeSocial.Contracts.Authentication;
+using ComeSocial.Application.Authentication.Queries.Login;
+using ComeSocial.Application.Contracts.Authentication;
 using ComeSocial.Domain.Common.Errors;
 using ErrorOr;
 using MapsterMapper;

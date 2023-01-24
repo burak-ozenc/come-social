@@ -1,15 +1,17 @@
-﻿using ComeSocial.Domain.Group;
+﻿using ComeSocial.Domain.ComeEventType;
 using ComeSocial.Domain.SocialEvent;
+using ComeSocial.Domain.Tag;
 using Microsoft.EntityFrameworkCore;
-using Neo4j.Driver;
 
 namespace ComeSocial.Infrastructure.Persistence;
 
-public class ComeSocialDbContext : DbContext
+public sealed class ComeSocialDbContext : DbContext
 {
     public ComeSocialDbContext(DbContextOptions<ComeSocialDbContext> options ) : base(options){}
     
     public DbSet<SocialEvent> SocialEvents { get; set; }
+    public DbSet<Tag> Tags { get; set; }
+    public DbSet<ComeEventType> ComeSocialEventTypes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -1,22 +1,22 @@
 ﻿using ComeSocial.Domain.Common.Models;
 using ComeSocial.Domain.Interest.ValueObjects;
-using ComeSocial.Domain.User.ValueObjects;
+using ComeSocial.Domain.Tag.ValueObjects;
 
 namespace ComeSocial.Domain.Interest;
 
 public sealed class Interest : AggregateRoot<InterestId>
 {
-    private readonly List<Tag.Tag> _tags = new();
+    private readonly List<TagId> _tags = new();
     
     public string Name { get; private set;  }
-    public IReadOnlyList<Tag.Tag> Tags => _tags.AsReadOnly();
+    public IReadOnlyList<TagId> Tags => _tags.AsReadOnly();
     public DateTime? CreatedDateTime { get; private set;  }
     public DateTime? UpdatedDateTime { get; private set;  }
     
     public Interest(
         InterestId id,
         string name,
-        List<Tag.Tag> tags,
+        List<TagId> tags,
         DateTime? createdDateTime,
         DateTime? updatedDateTime
         ) : base(id)
@@ -30,7 +30,7 @@ public sealed class Interest : AggregateRoot<InterestId>
     public static Interest CreateInterest(
         InterestId id,
         string name,
-        List<Tag.Tag> tags,
+        List<TagId> tags,
         DateTime? createdDateTime,
         DateTime? updatedDateTime) =>
         new(
