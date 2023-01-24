@@ -90,3 +90,5 @@ ComeSocial.sln.DotSettings.user
 appsettings.json
 appsettings.Development.json
 
+#shared settings 
+/SharedSettings

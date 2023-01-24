@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ComeEventType\Queries" />
     <Folder Include="SocialEvent\Queries" />
   </ItemGroup>
   

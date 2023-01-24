@@ -1,12 +1,14 @@
 ﻿using ComeSocial.Domain.Common.Models;
 using ComeSocial.Domain.SocialEvent.ValueObjects;
 using ComeSocial.Domain.Group.ValueObjects;
+using ComeSocial.Domain.User.ValueObjects;
 
 
 namespace ComeSocial.Domain.Group;
 
 public sealed class Group : AggregateRoot<GroupId>
 {
+    public readonly List<UserId> _users = new();
     // this field will be auto-filled with users' names
     // later can be changed to mutable field
     public string Name { get; private set; }
@@ -16,24 +18,24 @@ public sealed class Group : AggregateRoot<GroupId>
     // security tips
     // convert to IList
     // after implementing the ef core
-    public List<User.User> Users { get; private set; }
+    public IReadOnlyList<UserId> Users => _users;
     public SocialEventId SocialEventId { get; private set; }
     public DateTime? CreatedDateTime { get; private set; }
     public DateTime? UpdatedDateTime { get; private set; }
 
     public Group(GroupId groupId,
         string name,
-        DateTime eventDate,
+        DateTime socialEventDate,
         string groupAvatar,
-        List<User.User> users,
+        List<UserId> users,
         SocialEventId socialEventId,
         DateTime? createdDateTime,
         DateTime? updatedDateTime) : base(groupId)
     {
         Name = name;
-        SocialEventDate = eventDate;
+        SocialEventDate = socialEventDate;
         GroupAvatar = groupAvatar;
-        Users = users;
+        _users = users;
         SocialEventId = socialEventId;
         CreatedDateTime = createdDateTime;
         UpdatedDateTime = updatedDateTime;
@@ -41,11 +43,11 @@ public sealed class Group : AggregateRoot<GroupId>
 
     public static Group CreateGroup(GroupId groupId,
         string name,
-        DateTime eventDate,
+        DateTime socialEventDate,
         string groupAvatar,
-        List<User.User> users,
+        List<UserId> users,
         SocialEventId eventId)
-        => new(groupId, name, eventDate, groupAvatar, users, eventId, DateTime.Now,null);
+        => new(groupId, name, socialEventDate, groupAvatar, users, eventId, DateTime.Now,null);
 
     private Group(){}
 }

@@ -1,13 +1,14 @@
-﻿using ComeSocial.Domain.Common.Models;
-using ComeSocial.Domain.SocialEvent.Entities;
+﻿using ComeSocial.Domain.ComeEventType.ValueObjects;
+using ComeSocial.Domain.Common.Models;
 using ComeSocial.Domain.SocialEvent.ValueObjects;
+using ComeSocial.Domain.Tag.ValueObjects;
 
 namespace ComeSocial.Domain.SocialEvent;
 
 public sealed class SocialEvent : AggregateRoot<SocialEventId>
 {
-    private readonly List<string> _socialEventTypes = new();
-    private readonly List<string> _tags = new();
+    private readonly List<ComeEventTypeId> _comeEventTypes = new();
+    private readonly List<TagId> _tags = new();
     
     public string Name { get; private set; }
     public string SubHeader { get; private set; }
@@ -19,16 +20,16 @@ public sealed class SocialEvent : AggregateRoot<SocialEventId>
     // security tips
     // convert to IList
     // after implementing the ef core
-    public List<string> SocialEventTypes => _socialEventTypes;
-    public IReadOnlyList<string> Tags => _tags.AsReadOnly();
+    public List<ComeEventTypeId> ComeEventTypes => _comeEventTypes;
+    public List<TagId> Tags => _tags;
 
     private SocialEvent(SocialEventId id, 
         string name, 
         string subHeader,
         string description,
         DateTime date,
-        List<string> eventTypes,
-        List<string> tags,
+        List<ComeEventTypeId> comeEventTypes,
+        List<TagId> tags,
         DateTime? createdDateTime,
         DateTime? updatedDateTime 
         ) : base(id)
@@ -37,19 +38,19 @@ public sealed class SocialEvent : AggregateRoot<SocialEventId>
         SubHeader = subHeader;
         Description = description;
         Date = date;
-        _socialEventTypes = eventTypes;
+        _comeEventTypes = comeEventTypes;
         _tags = tags;
         CreatedDateTime = createdDateTime;
         UpdatedDateTime = updatedDateTime;
     }
 
-    public static SocialEvent CreateEvent(
+    public static SocialEvent Create(
         string name,
         string subHeader,
         string description,
         DateTime date,
-        List<string> eventType,
-        List<string> tags,
+        List<ComeEventTypeId> comeEventTypes,
+        List<TagId> tags,
         DateTime? createdDateTime,
         DateTime? updatedDateTime) 
         => new(SocialEventId.CreateUnique(), 
@@ -57,7 +58,7 @@ public sealed class SocialEvent : AggregateRoot<SocialEventId>
             subHeader, 
             description,
             date,
-            eventType,
+            comeEventTypes,
             tags,
             createdDateTime: DateTime.Now,
             updatedDateTime: null);

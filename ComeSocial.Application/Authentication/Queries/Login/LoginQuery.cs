@@ -1,8 +1,8 @@
 ﻿using ComeSocial.Application.Authentication.Common;
-using MediatR;
 using ErrorOr;
+using MediatR;
 
-namespace ComeSocial.Application.Authentication.Commands.Register;
+namespace ComeSocial.Application.Authentication.Queries.Login;
 
 public record LoginQuery (
     string Email,

@@ -31,12 +31,17 @@ public static class DependencyInjection
         this IServiceCollection services,
         ConfigurationManager configuration)
     {
-        services.AddDbContext<ComeSocialDbContext>(options => options.UseSqlServer());
+        services.AddDbContext<ComeSocialDbContext>(options => options
+            .UseSqlServer(configuration.GetConnectionString("sqlConnection"),
+                dbOptions => dbOptions.EnableRetryOnFailure()));
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<ITagRepository, TagRepository>();
         services.AddScoped<ISocialEventRepository, SocialEventRepository>();
+        services.AddScoped<IComeEventTypeRepository, ComeEventTypeRepository>();
 
         return services;
     }
+
     public static IServiceCollection AddAuth(
         this IServiceCollection services,
         ConfigurationManager configuration)
