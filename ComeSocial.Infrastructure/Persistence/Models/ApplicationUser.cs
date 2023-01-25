@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace ComeSocial.Infrastructure.Models;
+namespace ComeSocial.Infrastructure.Persistence.Models;
 
 public class ApplicationUser : IdentityUser
 {

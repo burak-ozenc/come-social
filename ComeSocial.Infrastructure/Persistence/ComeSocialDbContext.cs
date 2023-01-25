@@ -2,8 +2,8 @@
 using ComeSocial.Domain.Interest;
 using ComeSocial.Domain.SocialEvent;
 using ComeSocial.Domain.Tag;
-using ComeSocial.Infrastructure.Models;
 using ComeSocial.Infrastructure.Persistence.Configurations.IdentityConfigurations;
+using ComeSocial.Infrastructure.Persistence.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
