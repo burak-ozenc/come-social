@@ -5,7 +5,7 @@ namespace ComeSocial.Domain.User;
 
 
 // whole class will be adapted to identity service base user  
-public sealed class User : AggregateRoot<UserId>
+public sealed class User : AggregateRoot<UserId> 
 {
     public string FirstName { get; private set;  }
     public string LastName { get; private set; }

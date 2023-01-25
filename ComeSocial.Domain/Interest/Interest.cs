@@ -28,7 +28,6 @@ public sealed class Interest : AggregateRoot<InterestId>
     }
 
     public static Interest CreateInterest(
-        InterestId id,
         string name,
         List<TagId> tags,
         DateTime? createdDateTime,

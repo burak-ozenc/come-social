@@ -21,7 +21,7 @@ public sealed class ComeEventType : AggregateRoot<ComeEventTypeId>
         UpdatedDateTime = updatedDateTime;
     }
 
-    public static ComeEventType CreateComeEventType(
+    public static ComeEventType Create(
         string name,
         DateTime? createdDateTime,
         DateTime? updatedDateTime)

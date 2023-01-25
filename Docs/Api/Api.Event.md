@@ -44,14 +44,12 @@ POST /events/createEvent
   "date": "2015-05-16T12:50:06.7199222+03:00",
   "comeEventTypes": [
     {
-      "id": "706e8fd1-e81f-4478-86d6-f705a187b2fc",
-      "name": null
+      "id": "706e8fd1-e81f-4478-86d6-f705a187b2fc"
     }
   ],
   "tags": [
     {
-      "id": "25c5eaf5-57f5-49eb-9740-5bc9b6fe6bc1",
-      "name": null
+      "id": "25c5eaf5-57f5-49eb-9740-5bc9b6fe6bc1"
     }
   ],
   "createdDateTime": "2023-01-24T03:54:17.2071905+03:00",

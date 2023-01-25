@@ -12,6 +12,8 @@ public sealed class InterestId : ValueObject
     }
     
     public static InterestId CreateUnique() => new(Guid.NewGuid());
+
+    public static InterestId Create(Guid value) => new InterestId(value);
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

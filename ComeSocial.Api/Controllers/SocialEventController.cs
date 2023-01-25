@@ -26,8 +26,8 @@ public class SocialEventsController : ApiController
         return Ok(Array.Empty<string>());
     }
 
-    [HttpPost("CreateEvent")]
-    public async Task<IActionResult> CreateEvent(CreateSocialEventRequest request)
+    [HttpPost("CreateSocialEvent")]
+    public async Task<IActionResult> CreateSocialEvent(CreateSocialEventRequest request)
     {
         var command = _mapper.Map<CreateSocialEventCommand>(request);
         

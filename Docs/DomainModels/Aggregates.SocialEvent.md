@@ -16,25 +16,21 @@ class Event
   "id": { "value": "00000000-0000-0000-0000-000000000000" },
   "name": "Stromae",
   "subHeader": "Niceu Concerto",
-  "description": "A loooong description formatted with or HTML",
-  "date": "22-06-26 02:31:29,573",
-  "socialEventTypes": [
+  "description": "A loooong description formatted with HTML",
+  "date": "2015-05-16T12:50:06.7199222+03:00",
+  "comeEventTypes": [
     {
-      "id": "00000000-0000-0000-0000-000000000000",
-      "name": "concert",
-      "subTypes": [
-        "electronic",
-        "dancel"
-      ]
+      "id": { "value": "00000000-0000-0000-0000-000000000000" },
+      "name": null
     }
   ],
   "tags": [
     {
-      "name": "dance",
-      "id": "00000000-0000-0000-0000-000000000000"
+      "id": { "value": "00000000-0000-0000-0000-000000000000" },
+      "name": null
     }
   ],
-  "createdDateTime": "22-06-26 02:31:29,573",
-  "updatedDateTime": "22-06-26 02:31:29,573",
+  "createdDateTime": "2023-01-24T03:54:17.2071905+03:00",
+  "updatedDateTime": null
 }
 ```
