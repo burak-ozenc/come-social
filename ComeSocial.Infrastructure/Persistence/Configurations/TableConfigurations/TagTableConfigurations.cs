@@ -3,7 +3,7 @@ using ComeSocial.Domain.Tag.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ComeSocial.Infrastructure.Persistence.Configurations;
+namespace ComeSocial.Infrastructure.Persistence.Configurations.TableConfigurations;
 
 internal sealed class TagTableConfigurations : IEntityTypeConfiguration<Tag>
 {

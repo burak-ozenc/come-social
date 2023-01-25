@@ -17,7 +17,7 @@ public class CreateComeEventTypeHandler : IRequestHandler<CreateComeEventTypeCom
     {
         await Task.CompletedTask;
 
-        var socialEventType = Domain.ComeEventType.ComeEventType.CreateComeEventType(
+        var socialEventType = Domain.ComeEventType.ComeEventType.Create(
             name: request.Name,
             createdDateTime: request.CreatedDateTime,
             updatedDateTime: request.UpdatedDateTime

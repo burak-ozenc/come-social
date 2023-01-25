@@ -2,7 +2,7 @@
 
 namespace ComeSocial.Domain.Tag.ValueObjects;
 
-public class TagId : ValueObject
+public sealed class TagId : ValueObject
 {
     public Guid Value { get; }
     

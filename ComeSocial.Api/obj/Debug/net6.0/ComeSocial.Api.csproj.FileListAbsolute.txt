@@ -1,5 +1,3 @@
-C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\appsettings.json
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\ComeSocial.Api.exe
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\ComeSocial.Api.deps.json
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\ComeSocial.Api.runtimeconfig.json
@@ -82,3 +80,10 @@ C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\obj\Debug\net6.0\refint\ComeS
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\obj\Debug\net6.0\ComeSocial.Api.pdb
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\obj\Debug\net6.0\ComeSocial.Api.genruntimeconfig.cache
 C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\obj\Debug\net6.0\ref\ComeSocial.Api.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\appsettings.json
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\LENOVO\Projects\ComeSocial\ComeSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

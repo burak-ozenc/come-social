@@ -3,7 +3,7 @@ using ComeSocial.Domain.SocialEvent.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ComeSocial.Infrastructure.Persistence.Configurations;
+namespace ComeSocial.Infrastructure.Persistence.Configurations.TableConfigurations;
 
 internal sealed class SocialEventTableConfigurations : IEntityTypeConfiguration<SocialEvent>
 {
@@ -44,8 +44,8 @@ internal sealed class SocialEventTableConfigurations : IEntityTypeConfiguration<
 
             tagBuilder
                 .Property(r => r.Value)
-                .HasColumnName("TagId")
-                .ValueGeneratedNever();
+                .ValueGeneratedNever()
+                .HasColumnName("TagId");
         });
 
         builder.Metadata
@@ -63,7 +63,6 @@ internal sealed class SocialEventTableConfigurations : IEntityTypeConfiguration<
             socialEventTypeBuilder
                 .WithOwner()
                 .HasForeignKey("SocialEventId");
-    
             socialEventTypeBuilder.HasKey("Id");
             
             socialEventTypeBuilder

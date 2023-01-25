@@ -1,8 +1,6 @@
 using ComeSocial.Api;
-using ComeSocial.Api.Common.Errors;
 using ComeSocial.Application;
 using ComeSocial.Infrastructure;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
@@ -10,11 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
         .AddPresentation()
         .AddApplication()
         .AddInfrastructure(builder.Configuration);
-    
-    
 }
-// Add services to the container.
 
+// Add services to the container.
 var app = builder.Build();
 {
     app.UseExceptionHandler("/error");
@@ -27,5 +23,3 @@ var app = builder.Build();
 
     app.Run();
 }
-
-
