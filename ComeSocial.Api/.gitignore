@@ -90,3 +90,16 @@ ComeSocial.sln.DotSettings.user
 appsettings.json
 appsettings.Development.json
 
+#object caches
+/obj
+/bin
+../ComeSocial.Application/obj
+../ComeSocial.Application/bin
+../ComeSocial.Domain/obj
+../ComeSocial.Domain/bin
+../ComeSocial.Infrastructure/obj
+../ComeSocial.Infrastructure/bin
+
+
+#migrations
+../ComeSocial.Infrastructure/Migrations
