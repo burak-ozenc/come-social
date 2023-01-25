@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AsOuU2rxKU81733GMATzDC3tvcNM+8sYs4Nwmh70ziD6rn2sdFLeZ5EvBbOsabXiN2B1HdJZ6nkdo9QOcHCFzg==",
+  "dgSpecHash": "PaIpe0SkK4FkprVx3xKipH3jHHILbWIFm65jGY/Nl+Mldb5qSslo3iPCjmrLakYJtOzb0CPxsADq4RBqVUFT4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Api\\ComeSocial.Api.csproj",
+  "projectFilePath": "C:\\Users\\LENOVO\\Projects\\come-social\\ComeSocial.Api\\ComeSocial.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\fluentresults\\3.15.1\\fluentresults.3.15.1.nupkg.sha512",

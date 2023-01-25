@@ -2696,11 +2696,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Application\\ComeSocial.Application.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\Projects\\come-social\\ComeSocial.Application\\ComeSocial.Application.csproj",
       "projectName": "ComeSocial.Application",
-      "projectPath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Application\\ComeSocial.Application.csproj",
+      "projectPath": "C:\\Users\\LENOVO\\Projects\\come-social\\ComeSocial.Application\\ComeSocial.Application.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Application\\obj\\",
+      "outputPath": "C:\\Users\\LENOVO\\Projects\\come-social\\ComeSocial.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2721,8 +2721,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Domain\\ComeSocial.Domain.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Domain\\ComeSocial.Domain.csproj"
+            "C:\\Users\\LENOVO\\Projects\\come-social\\ComeSocial.Domain\\ComeSocial.Domain.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Projects\\come-social\\ComeSocial.Domain\\ComeSocial.Domain.csproj"
             }
           }
         }

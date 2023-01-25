@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JLdnKIk9hF5olU9euvMjOQMnY6qgg9JtE610mpFyRlfA6zSRI8IrEyQYpkbWQ+aKmByD2tTH8wAkAD7ey1n0xA==",
+  "dgSpecHash": "dzK42dJb95gkQ48xj3tC4CK31SskJvmJ+kqCmmxl1MFEF6VLk55ju2pKtdf/H0+2gmGeenAgunWJLspwl8BFig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\ComeSocial.Domain\\ComeSocial.Domain.csproj",
+  "projectFilePath": "C:\\Users\\LENOVO\\Projects\\come-social\\ComeSocial.Domain\\ComeSocial.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
