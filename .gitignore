@@ -92,3 +92,15 @@ appsettings.Development.json
 
 #shared settings 
 /SharedSettings
+
+
+#object caches
+ComeSocial.Application/obj
+ComeSocial.Application/bin
+ComeSocial.Domain/obj
+ComeSocial.Domain/bin
+ComeSocial.Infrastructure/obj
+ComeSocial.Infrastructure/bin
+
+#migrations 
+ComeSocial.Infrastructure/Migrations
