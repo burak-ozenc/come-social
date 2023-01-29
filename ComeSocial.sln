@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Api", "ComeSocial.Api\ComeSocial.Api.csproj", "{A65300AA-A8C0-48F0-B45A-3F4F4DF7B26F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Application", "ComeSocial.Application\ComeSocial.Application.csproj", "{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Domain", "ComeSocial.Domain\ComeSocial.Domain.csproj", "{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Infrastructure", "ComeSocial.Infrastructure\ComeSocial.Infrastructure.csproj", "{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{38653E35-7713-49E3-8353-E1E0B7658D7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A65300AA-A8C0-48F0-B45A-3F4F4DF7B26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65300AA-A8C0-48F0-B45A-3F4F4DF7B26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65300AA-A8C0-48F0-B45A-3F4F4DF7B26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65300AA-A8C0-48F0-B45A-3F4F4DF7B26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2B3ECE-1A45-43B2-B499-6B5EE511C24F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74DBD83D-E0EC-4E0C-B606-E29D9CB17DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F} = {38653E35-7713-49E3-8353-E1E0B7658D7F}
+	EndGlobalSection
+EndGlobal
