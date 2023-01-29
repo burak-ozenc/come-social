@@ -1,19 +1,29 @@
 ﻿using ComeSocial.Application.Common.Interfaces.Persistence;
-using ComeSocial.Domain.Entities;
+using ComeSocial.Domain.Common.Authentication;
 
 namespace ComeSocial.Infrastructure.Persistence.Repositories;
 
 public class UserRepository : IUserRepository
 {
-    private static List<User> _users = new List<User>();
-    
-    public void  AddUser(User user)
+    private readonly ComeSocialDbContext _dbContext;
+
+
+    public UserRepository(ComeSocialDbContext dbContext)
     {
-        _users.Add(user);
+        _dbContext = dbContext;
     }
 
-    public User GetUserByEmail(string email)
+    public void AddUser(ApplicationUser user)
     {
-        return _users.FirstOrDefault(c => c.Email == email);
+        _dbContext.Users.Add(user);
+        _dbContext.SaveChanges();
     }
+    
+    public ApplicationUser GetUserByEmail(string email)
+    {
+        var _user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
+        return _user != null ? _user : null;
+    }
+
+
 }

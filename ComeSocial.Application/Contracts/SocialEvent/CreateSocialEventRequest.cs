@@ -16,6 +16,5 @@ public record SocialEventTagRequest(
     string Id);
 
 public record SocialEventTypesRequest(
-    string Id,
-    string Name
+    string Id
     );

@@ -12,7 +12,9 @@ internal sealed class SocialEventTableConfigurations : IEntityTypeConfiguration<
         ConfigureSocialEventTable(builder);
         ConfigureSocialEventTagsTable(builder);
         ConfigureComeEventTypesTable(builder);
+        // ConfigureSocialEventUsersTable(builder);
     }
+    
 
     private void ConfigureSocialEventTable(EntityTypeBuilder<SocialEvent> builder)
     {

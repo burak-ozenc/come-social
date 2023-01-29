@@ -20,7 +20,7 @@ public class CreateTagCommandHandler : IRequestHandler<CreateTagCommand, Domain.
 
         var tag = Domain.Tag.Tag.CreateTag(
             name: request.Name,
-            createdDateTime: request.CreatedDateTime,
+            createdDateTime: DateTime.Now, 
             updatedDateTime: request.UpdatedDateTime
         );
         

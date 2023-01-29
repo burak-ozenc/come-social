@@ -2,10 +2,10 @@
 using ComeSocial.Application.Common.Interfaces.Authentication;
 using ComeSocial.Application.Common.Interfaces.Persistence;
 using ComeSocial.Application.Common.Interfaces.Services;
-using ComeSocial.Domain.User;
+using ComeSocial.Domain.Common.Authentication;
 using ComeSocial.Infrastructure.Authentication;
-using ComeSocial.Infrastructure.Models;
 using ComeSocial.Infrastructure.Persistence;
+using ComeSocial.Infrastructure.Persistence.Configurations.IdentityConfigurations;
 using ComeSocial.Infrastructure.Persistence.Repositories;
 using ComeSocial.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -42,6 +42,8 @@ public static class DependencyInjection
         services.AddScoped<ISocialEventRepository, SocialEventRepository>();
         services.AddScoped<IComeEventTypeRepository, ComeEventTypeRepository>();
         services.AddScoped<IInterestRepository, InterestRepository>();
+        services.AddScoped<IUserService, UserService>();
+
 
         return services;
     }
@@ -56,14 +58,22 @@ public static class DependencyInjection
 
         services.AddSingleton(Options.Create(jwtSettings));
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+        
 
-        services.AddIdentity<ApplicationUser, IdentityRole>()
+        services.AddIdentity<ApplicationUser, ApplicationRole>()
             .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(TokenOptions.DefaultProvider)
             .AddEntityFrameworkStores<ComeSocialDbContext>();
-        
+
         services.Configure<IdentityOptions>(options => ConfigureIdentityOptions(options));
 
-        services.AddAuthentication(defaultScheme: JwtBearerDefaults.AuthenticationScheme)
+        
+        services.AddAuthentication(i =>
+        {
+            i.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            i.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            i.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            i.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
+        })
             .AddJwtBearer(options => ConfigureJwt(options, jwtSettings));
 
         return services;

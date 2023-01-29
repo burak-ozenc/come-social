@@ -1,13 +1,14 @@
 ﻿using ComeSocial.Application.Contracts.SocialEvent;
-using ComeSocial.Application.SocialEvent.Commands;
 using ComeSocial.Application.SocialEvent.Commands.CreateSocialEvent;
 using MapsterMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComeSocial.Api.Controllers;
 
-// [Authorize]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [Route("events")]
 public class SocialEventsController : ApiController
 {

@@ -27,7 +27,7 @@ public class SocialEventMappingConfig : IRegister
 
         config.NewConfig<TagId, SocialEventTagResponse>()
             .Map(dest => dest.Id, src => src.Value);
-        
+
         config.NewConfig<ComeEventTypeId, ComeEventTypeResponse>()
             .Map(dest => dest.Id, src => src.Value);
     }

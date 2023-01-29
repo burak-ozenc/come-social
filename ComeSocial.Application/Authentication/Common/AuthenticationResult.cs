@@ -1,7 +1,10 @@
-﻿using ComeSocial.Domain.Entities;
+﻿
+
+using ComeSocial.Domain.Common.Authentication;
+using ComeSocial.Domain.User;
 
 namespace ComeSocial.Application.Authentication.Common;
 
 public record AuthenticationResult(
-    User User,
+    ApplicationUser User,
     string Token);

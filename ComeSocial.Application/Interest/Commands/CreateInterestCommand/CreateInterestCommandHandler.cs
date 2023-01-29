@@ -20,7 +20,7 @@ public class CreateInterestCommandHandler : IRequestHandler<CreateInterestComman
         var interest = Domain.Interest.Interest.CreateInterest(
             name: request.Name,
             tags: request.TagIds.ConvertAll(t => TagId.Create(Guid.Parse(t))),
-            createdDateTime: request.CreatedDateTime,
+            createdDateTime: DateTime.Now, 
             updatedDateTime: request.UpdatedDateTime
         );
         

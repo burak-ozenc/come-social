@@ -13,8 +13,6 @@ public record CreateSocialEventResponse(
     );
     
 public record SocialEventTagResponse(
-    string Id,
-    string Name);
+    string Id);
 public record ComeEventTypeResponse(
-    string Id,
-    string Name);
+    string Id);

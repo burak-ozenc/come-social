@@ -7,7 +7,6 @@ namespace ComeSocial.Api.Controllers;
 [ApiController]
 public class ApiController : ControllerBase
 {
-    // GET
     protected IActionResult Problem(List<Error> errors)
     {
         if (errors?.Count == 0) return Problem();

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace ComeSocial.Infrastructure.Models;
+namespace ComeSocial.Domain.Common.Authentication;
 
-public class ApplicationUser : IdentityUser
+public class ApplicationUser : IdentityUser<Guid>
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }

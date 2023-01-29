@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using ComeSocial.Application.Common.Interfaces.Authentication;
 using ComeSocial.Application.Common.Interfaces.Services;
-using ComeSocial.Domain.Entities;
+using ComeSocial.Domain.Common.Authentication;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -19,7 +19,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
         _dateTimeProvider = dateTimeProvider;
         _jwtSettings = jwtOptions.Value;
     }
-    public string GenerateToken(User user)
+    public string GenerateToken(ApplicationUser user)
     {
         var signinCredentials = new SigningCredentials(
             new SymmetricSecurityKey(

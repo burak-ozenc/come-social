@@ -28,7 +28,7 @@ public class CreateSocialEventHandler : IRequestHandler<CreateSocialEventCommand
                 .ConvertAll(t => ComeEventTypeId.Create(Guid.Parse(t))),
             tags: request.Tags
                 .ConvertAll(t => TagId.Create(Guid.Parse(t))),
-            createdDateTime: request.CreatedDateTime,
+            createdDateTime: DateTime.Now, 
             updatedDateTime: request.UpdatedDateTime
         );
         

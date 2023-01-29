@@ -19,7 +19,7 @@ public class CreateComeEventTypeHandler : IRequestHandler<CreateComeEventTypeCom
 
         var socialEventType = Domain.ComeEventType.ComeEventType.Create(
             name: request.Name,
-            createdDateTime: request.CreatedDateTime,
+            createdDateTime: DateTime.Now, 
             updatedDateTime: request.UpdatedDateTime
         );
         

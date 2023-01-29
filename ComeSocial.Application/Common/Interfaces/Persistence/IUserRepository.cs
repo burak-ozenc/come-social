@@ -1,10 +1,9 @@
-﻿using ComeSocial.Domain.Entities;
+﻿using ComeSocial.Domain.Common.Authentication;
 
 namespace ComeSocial.Application.Common.Interfaces.Persistence;
 
 public interface IUserRepository
 {
-    // private readonly List<User> _users;
-    User? GetUserByEmail(string email);
-    void AddUser(User user);
+    void AddUser(ApplicationUser user);
+    ApplicationUser GetUserByEmail(string email);
 }
