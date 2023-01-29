@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Infrastructure", "ComeSocial.Infrastructure\ComeSocial.Infrastructure.csproj", "{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4CBAFED7-32A4-4103-BAC6-57ED15C58CBB}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\.gitignore = Tests\.gitignore
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureTests", "Tests\ArchitectureTests\ArchitectureTests.csproj", "{D242BDCB-E1A8-4BBE-9395-762AD3B23795}"
 EndProject
