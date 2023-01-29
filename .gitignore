@@ -101,8 +101,6 @@ ComeSocial.Domain/obj
 ComeSocial.Domain/bin
 ComeSocial.Infrastructure/obj
 ComeSocial.Infrastructure/bin
-UnitTests/bin
-UnitTests/obj
 
 #migrations 
 ComeSocial.Infrastructure/Migrations
