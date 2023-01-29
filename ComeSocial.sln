@@ -11,12 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Domain", "ComeSo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Infrastructure", "ComeSocial.Infrastructure\ComeSocial.Infrastructure.csproj", "{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4CBAFED7-32A4-4103-BAC6-57ED15C58CBB}"
-	ProjectSection(SolutionItems) = preProject
-		Tests\.gitignore = Tests\.gitignore
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{38653E35-7713-49E3-8353-E1E0B7658D7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureTests", "Tests\ArchitectureTests\ArchitectureTests.csproj", "{D242BDCB-E1A8-4BBE-9395-762AD3B23795}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,12 +40,12 @@ Global
 		{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D242BDCB-E1A8-4BBE-9395-762AD3B23795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D242BDCB-E1A8-4BBE-9395-762AD3B23795}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D242BDCB-E1A8-4BBE-9395-762AD3B23795}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D242BDCB-E1A8-4BBE-9395-762AD3B23795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D242BDCB-E1A8-4BBE-9395-762AD3B23795} = {4CBAFED7-32A4-4103-BAC6-57ED15C58CBB}
+		{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F} = {38653E35-7713-49E3-8353-E1E0B7658D7F}
 	EndGlobalSection
 EndGlobal
