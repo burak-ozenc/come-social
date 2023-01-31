@@ -41,13 +41,20 @@ public sealed class Group : AggregateRoot<GroupId>
         UpdatedDateTime = updatedDateTime;
     }
 
-    public static Group CreateGroup(GroupId groupId,
+    public static Group CreateGroup(
         string name,
-        DateTime socialEventDate,
         string groupAvatar,
-        List<UserId> users,
-        SocialEventId eventId)
-        => new(groupId, name, socialEventDate, groupAvatar, users, eventId, DateTime.Now,null);
+        DateTime socialEventDate,
+        SocialEventId socialEventId,
+        List<UserId> users)
+        => new(
+            GroupId.CreateUnique(), 
+            name, 
+            socialEventDate, 
+            groupAvatar, 
+            users, socialEventId, 
+            DateTime.Now,
+            null);
 
     private Group(){}
 }

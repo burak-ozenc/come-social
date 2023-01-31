@@ -1,5 +1,6 @@
 ﻿using ComeSocial.Domain.ComeEventType;
 using ComeSocial.Domain.Common.Authentication;
+using ComeSocial.Domain.Group;
 using ComeSocial.Domain.Interest;
 using ComeSocial.Domain.SocialEvent;
 using ComeSocial.Domain.Tag;
@@ -17,6 +18,7 @@ public sealed class ComeSocialDbContext : IdentityDbContext<ApplicationUser, App
     public DbSet<Tag> Tags { get; set; }
     public DbSet<ComeEventType> ComeSocialEventTypes { get; set; }
     public DbSet<Interest> Interests { get; set; }
+    public DbSet<Group> Groups { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

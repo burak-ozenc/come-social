@@ -42,6 +42,7 @@ public static class DependencyInjection
         services.AddScoped<ISocialEventRepository, SocialEventRepository>();
         services.AddScoped<IComeEventTypeRepository, ComeEventTypeRepository>();
         services.AddScoped<IInterestRepository, InterestRepository>();
+        services.AddScoped<IGroupRepository, GroupRepository>();
         services.AddScoped<IUserService, UserService>();
 
 

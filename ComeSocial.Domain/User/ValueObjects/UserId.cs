@@ -11,10 +11,9 @@ public class UserId : ValueObject
         Value = value;
     }
 
-    public static UserId CreateUnique()
-    {
-        return new(Guid.NewGuid());
-    }
+    public static UserId CreateUnique() => new(Guid.NewGuid());
+
+    public static UserId Create(Guid value) => new UserId(value);
     
     public override IEnumerable<object> GetEqualityComponents()
     {

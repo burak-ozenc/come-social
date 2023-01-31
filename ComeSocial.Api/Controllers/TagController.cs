@@ -25,6 +25,5 @@ public class TagsController : ApiController
         var createTagResult = await _mediator.Send(command);
 
         return Ok(_mapper.Map<CreateTagResponse>(createTagResult));
-
     }
 }

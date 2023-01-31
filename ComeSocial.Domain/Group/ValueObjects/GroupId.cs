@@ -13,6 +13,8 @@ public sealed class GroupId : ValueObject
 
     public static GroupId CreateUnique() => new(Guid.NewGuid());
 
+    public static GroupId Create(Guid value) => new GroupId(value);
+
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

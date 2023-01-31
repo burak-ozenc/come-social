@@ -33,6 +33,7 @@ public class CreateSocialEventHandler : IRequestHandler<CreateSocialEventCommand
         );
         
         _socialEventRepository.Add(socialEvent);
+        
         return socialEvent;
     }
 }
