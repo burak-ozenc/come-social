@@ -41,6 +41,22 @@ public sealed class Group : AggregateRoot<GroupId>
         UpdatedDateTime = updatedDateTime;
     }
 
+<<<<<<< HEAD
+    public static Group CreateGroup(
+        string name,
+        string groupAvatar,
+        DateTime socialEventDate,
+        SocialEventId socialEventId,
+        List<UserId> users)
+        => new(
+            GroupId.CreateUnique(), 
+            name, 
+            socialEventDate, 
+            groupAvatar, 
+            users, socialEventId, 
+            DateTime.Now,
+            null);
+=======
     public static Group CreateGroup(GroupId groupId,
         string name,
         DateTime socialEventDate,
@@ -48,6 +64,7 @@ public sealed class Group : AggregateRoot<GroupId>
         List<UserId> users,
         SocialEventId eventId)
         => new(groupId, name, socialEventDate, groupAvatar, users, eventId, DateTime.Now,null);
+>>>>>>> 3859e355bf2b322bb20dc646a539f83c4f807a39
 
     private Group(){}
 }

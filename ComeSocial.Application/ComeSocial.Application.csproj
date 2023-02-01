@@ -21,10 +21,13 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
     <PackageReference Include="OneOf" Version="3.0.223" />
   </ItemGroup>
+<<<<<<< HEAD
+=======
 
   <ItemGroup>
     <Folder Include="ComeEventType\Queries" />
     <Folder Include="SocialEvent\Queries" />
   </ItemGroup>
+>>>>>>> 3859e355bf2b322bb20dc646a539f83c4f807a39
   
 </Project>

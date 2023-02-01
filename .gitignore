@@ -101,8 +101,11 @@ ComeSocial.Domain/obj
 ComeSocial.Domain/bin
 ComeSocial.Infrastructure/obj
 ComeSocial.Infrastructure/bin
+<<<<<<< HEAD
+=======
 Tests/bin
 Tests/obj
+>>>>>>> 3859e355bf2b322bb20dc646a539f83c4f807a39
 
 #migrations 
 ComeSocial.Infrastructure/Migrations
