@@ -1,6 +1,6 @@
-﻿using ComeSocial.Domain.Common.Authentication;
-using ComeSocial.Domain.Group;
+﻿using ComeSocial.Domain.Group;
 using ComeSocial.Domain.Group.ValueObjects;
+using ComeSocial.Domain.SocialEvent.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,7 +11,7 @@ internal sealed class GroupTableConfigurations : IEntityTypeConfiguration<Group>
     public void Configure(EntityTypeBuilder<Group> builder)
     {
         ConfigureGroupTable(builder);
-        // ConfigureGroupUsersTable(builder);
+        ConfigureGroupUsersTable(builder);
     }
 
     private void ConfigureGroupTable(EntityTypeBuilder<Group> builder)
@@ -28,28 +28,53 @@ internal sealed class GroupTableConfigurations : IEntityTypeConfiguration<Group>
 
         builder.Property(g => g.Name)
             .HasMaxLength(100);
+
+
+        // builder.OwnsOne(g => g.SocialEventId);
+        builder.Property(g => g.SocialEventId)
+            .HasConversion(
+                id => id.Value,
+                value => SocialEventId.Create(value)
+            );
     }
 
-    // private void ConfigureGroupUsersTable(EntityTypeBuilder<Group> builder)
+    private void ConfigureGroupUsersTable(EntityTypeBuilder<Group> builder)
+    {
+        builder.OwnsMany(g => g.Users, userBuilder =>
+            {
+                userBuilder.ToTable("GroupUsers");
+
+                userBuilder.WithOwner()
+                    .HasForeignKey("GroupId");
+
+                userBuilder.HasKey("Id");
+
+                userBuilder
+                    .Property(u => u.Value)
+                    .ValueGeneratedNever()
+                    .HasColumnName("UserId");
+            }
+        );
+
+        builder.Metadata
+            .FindNavigation(nameof(Group.Users))!
+            .SetPropertyAccessMode(PropertyAccessMode.Field);
+    }
+    // private void ConfigureGroupEventId(EntityTypeBuilder<Group> builder)
     // {
-    //     builder.OwnsMany(g => g.Users, userBuilder =>
-    //         {
-    //             userBuilder.ToTable("GroupUsers");
+    //     builder.OwnsOne(g => g.SocialEventId, socialEventIdBuilder =>
+    //     {
+    //         socialEventIdBuilder.OwnsOne(se => se);
     //
-    //             userBuilder.WithOwner()
-    //                 .HasForeignKey("GroupId");
     //
-    //             userBuilder.HasKey("Id");
+    //         builder.OwnsOne(g => g.SocialEventId);
+    //         socialEventIdBuilder.Property(se => se)
+    //             .ValueGeneratedNever()
+    //             .HasConversion(
+    //                 id => id.Value,
+    //                 value => SocialEventId.Create(value)
+    //             );
+    //     });
     //
-    //             userBuilder
-    //                 .Property(u => u)
-    //                 .ValueGeneratedNever()
-    //                 .HasColumnName("UserId");
-    //         }
-    //     );
-    //
-    //     builder.Metadata
-    //         .FindNavigation(nameof(ApplicationUser))!
-    //         .SetPropertyAccessMode(PropertyAccessMode.Field);
     // }
 }

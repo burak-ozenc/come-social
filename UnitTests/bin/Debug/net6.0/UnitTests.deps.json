@@ -1882,6 +1882,7 @@
       "ComeSocial.Infrastructure/1.0.0": {
         "dependencies": {
           "ComeSocial.Application": "1.0.0",
+          "ComeSocial.Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.12",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.13",

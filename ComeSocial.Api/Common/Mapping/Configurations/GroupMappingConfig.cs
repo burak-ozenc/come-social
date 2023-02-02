@@ -12,9 +12,9 @@ public class GroupMappingConfig : IRegister
     {
         config.NewConfig<CreateGroupRequest, CreateGroupCommand>()
             .Map(dest => dest.UserIds,
-                src => src.Users.ConvertAll(u => u.Id));
-        // .Map(dest => dest.SocialEventId,
-        // src => src.SocialEventId);
+                src => src.Users.ConvertAll(u => u.Id))
+        .Map(dest => dest.SocialEventId,
+        src => src.SocialEventId);
 
         config.NewConfig<Group, CreateGroupResponse>()
             .Map(dest => dest.SocialEventId,
@@ -24,9 +24,6 @@ public class GroupMappingConfig : IRegister
 
         config.NewConfig<GroupId, GroupUsersResponse>()
             .Map(dest => dest.Id, src => src.Value);
-        
-        
-
 
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mKBgdCEN7Z7B9s/Cj2RgKg3+DVGx7bXaXNGSvpbVGujr31PyJdmOiz/zj2SUIKoJEaUCdzjcrZr9suvIBxh5Tg==",
+  "dgSpecHash": "INBvBLwox9K5HED7zTZC1/ul3GdJ+Kdw2Qpk6d2UTK2GF8meyZ2eb5WCXD/V/MdbChuurB4ZMPw50R8IzxN4fQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Projects\\come-social\\UnitTests\\UnitTests.csproj",
+  "projectFilePath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
