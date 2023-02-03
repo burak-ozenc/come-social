@@ -1,6 +1,7 @@
 ﻿namespace ComeSocial.Application.Contracts.Group;
 
 public record CreateGroupResponse(
+    string Id,
     string Name,
     string GroupAvatar,
     string SocialEventId,

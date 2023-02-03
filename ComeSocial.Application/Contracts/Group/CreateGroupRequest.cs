@@ -3,9 +3,10 @@
 public record CreateGroupRequest(
     string Name,
     string GroupAvatar,
-    string SocialEventId,
+    GroupSocialEventIdResponse SocialEventId,
     DateTime SocialEventDate,
-    List<GroupUsersRequest> Users);
+    List<GroupUsersRequest> UserIds);
     
     
-public record GroupUsersRequest(string Id);
+public record GroupUsersRequest(string Value);
+public record GroupSocialEventIdResponse(string Value);

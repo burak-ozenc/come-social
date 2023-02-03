@@ -18,7 +18,7 @@ public class GroupController : ApiController
     }
     
     [HttpPost("CreateGroup")]
-    public async Task<IActionResult> CreateTag(CreateGroupRequest request)
+    public async Task<IActionResult> CreateGroup(CreateGroupRequest request)
     {
         var command = _mapper.Map<CreateGroupCommand>(request);
 

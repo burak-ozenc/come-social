@@ -29,8 +29,7 @@ internal sealed class GroupTableConfigurations : IEntityTypeConfiguration<Group>
         builder.Property(g => g.Name)
             .HasMaxLength(100);
 
-
-        // builder.OwnsOne(g => g.SocialEventId);
+        
         builder.Property(g => g.SocialEventId)
             .HasConversion(
                 id => id.Value,
@@ -60,21 +59,4 @@ internal sealed class GroupTableConfigurations : IEntityTypeConfiguration<Group>
             .FindNavigation(nameof(Group.Users))!
             .SetPropertyAccessMode(PropertyAccessMode.Field);
     }
-    // private void ConfigureGroupEventId(EntityTypeBuilder<Group> builder)
-    // {
-    //     builder.OwnsOne(g => g.SocialEventId, socialEventIdBuilder =>
-    //     {
-    //         socialEventIdBuilder.OwnsOne(se => se);
-    //
-    //
-    //         builder.OwnsOne(g => g.SocialEventId);
-    //         socialEventIdBuilder.Property(se => se)
-    //             .ValueGeneratedNever()
-    //             .HasConversion(
-    //                 id => id.Value,
-    //                 value => SocialEventId.Create(value)
-    //             );
-    //     });
-    //
-    // }
 }
