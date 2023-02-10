@@ -19,9 +19,7 @@ public class UserService : IUserService
     }
     public async Task<ApplicationUser> CreateUser(ApplicationUser user)
     {
-        await Task.CompletedTask;
-
-        if (_userRepository.GetUserByEmail(user.Email) != null)
+        if (_userRepository.GetUserByEmailAsync(user.Email) != null)
             throw new NotImplementedException();
         
         var createUserResult = await _userManager.CreateAsync(user, user.Password);
@@ -32,8 +30,13 @@ public class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public ApplicationUser GetUserByEmail(string email)
+    public ApplicationUser? GetUserByEmail(string email)
     {
         return _userRepository.GetUserByEmail(email);
+    }
+
+    public async Task<ApplicationUser?> GetUserByEmailAsync(string email)
+    {
+        return await _userRepository.GetUserByEmailAsync(email);
     }
 }

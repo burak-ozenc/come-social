@@ -1,6 +1,7 @@
 ﻿using ComeSocial.Application.Authentication.Common;
+using FluentResults;
 using MediatR;
-using ErrorOr;
+
 
 namespace ComeSocial.Application.Authentication.Commands.Register;
 
@@ -10,4 +11,4 @@ public record RegisterCommand(
     string UserName,
     string Email,
     string Password
-    ) : IRequest<AuthenticationResult>;
+    ) : IRequest<Result<AuthenticationResult>>;

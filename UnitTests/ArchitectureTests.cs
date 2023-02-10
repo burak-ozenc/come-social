@@ -1,6 +1,6 @@
 using NetArchTest.Rules;	
 
-namespace ArchitectureTests;	
+namespace UnitTests;	
 
 public class UnitTest1	
 {	
@@ -72,7 +72,8 @@ public class UnitTest1
 
         // assert	
         Assert.True(testResult.IsSuccessful);	
-    }	
+    }
+    
     [Fact]	
     public void Infrastructure_Should_Not_Have_DependencyOnOtherProjects()	
     {	
@@ -93,25 +94,5 @@ public class UnitTest1
 
         // assert	
         Assert.True(testResult.IsSuccessful);	
-    }	
-
-    public void Controllers_Should_Have_DependencyOnMediatR()	
-    {	
-        // arrange	
-        var assembly = typeof(ComeSocial.Api.AssemblyReference).Assembly;	
-
-
-        // act 	
-        var testResult = Types	
-            .InAssembly(assembly)	
-            .That()	
-            .HaveNameEndingWith("Controller")	
-            .Should()	
-            .HaveDependencyOn("MediatR")	
-            .GetResult();	
-
-
-        // assert	
-        Assert.True(testResult.IsSuccessful);	
-    }	
+    }
 }	

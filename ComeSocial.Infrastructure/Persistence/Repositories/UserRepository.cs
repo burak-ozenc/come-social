@@ -1,5 +1,6 @@
 ﻿using ComeSocial.Application.Common.Interfaces.Persistence;
 using ComeSocial.Domain.Common.Authentication;
+using Microsoft.EntityFrameworkCore;
 
 namespace ComeSocial.Infrastructure.Persistence.Repositories;
 
@@ -21,8 +22,11 @@ public class UserRepository : IUserRepository
     
     public ApplicationUser GetUserByEmail(string email)
     {
-        var _user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
-        return _user != null ? _user : null;
+        return _dbContext.Users?.FirstOrDefault(u => u.Email == email);
+    }
+    public async Task<ApplicationUser?> GetUserByEmailAsync(string email)
+    {
+        return await _dbContext.Users?.FirstOrDefaultAsync(u => u.Email == email);
     }
 
 

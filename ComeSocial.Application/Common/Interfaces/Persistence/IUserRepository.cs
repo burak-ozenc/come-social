@@ -6,4 +6,6 @@ public interface IUserRepository
 {
     void AddUser(ApplicationUser user);
     ApplicationUser GetUserByEmail(string email);
+    Task<ApplicationUser> GetUserByEmailAsync(string email);
+    
 }

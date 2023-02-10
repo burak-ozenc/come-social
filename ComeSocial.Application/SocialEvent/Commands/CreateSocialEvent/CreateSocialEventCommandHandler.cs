@@ -5,7 +5,7 @@ using MediatR;
 
 namespace ComeSocial.Application.SocialEvent.Commands.CreateSocialEvent;
 
-public class CreateSocialEventHandler : IRequestHandler<CreateSocialEventCommand, Domain.SocialEvent.SocialEvent>
+internal sealed class CreateSocialEventHandler : IRequestHandler<CreateSocialEventCommand, Domain.SocialEvent.SocialEvent>
 {
     private readonly ISocialEventRepository _socialEventRepository;
 
@@ -33,6 +33,7 @@ public class CreateSocialEventHandler : IRequestHandler<CreateSocialEventCommand
         );
         
         _socialEventRepository.Add(socialEvent);
+        
         return socialEvent;
     }
 }

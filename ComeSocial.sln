@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Domain", "ComeSo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComeSocial.Infrastructure", "ComeSocial.Infrastructure\ComeSocial.Infrastructure.csproj", "{9875F013-716B-4B1D-9CD8-40EA01B4D2C2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{38653E35-7713-49E3-8353-E1E0B7658D7F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{38653E35-7713-49E3-8353-E1E0B7658D7F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{2D7CA56A-D6B9-4205-94AE-8C69DED03E6F}"
 EndProject
