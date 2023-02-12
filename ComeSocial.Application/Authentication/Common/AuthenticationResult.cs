@@ -1,7 +1,4 @@
-﻿
-
-using ComeSocial.Domain.Common.Authentication;
-using ComeSocial.Domain.User;
+﻿using ComeSocial.Domain.Common.Authentication;
 
 namespace ComeSocial.Application.Authentication.Common;
 

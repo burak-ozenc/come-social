@@ -3,8 +3,6 @@ using ComeSocial.Application.Authentication.Common;
 using ComeSocial.Application.Authentication.Queries.Login;
 using ComeSocial.Application.Common.Errors;
 using ComeSocial.Application.Contracts.Authentication;
-using ComeSocial.Domain.Common.Errors;
-using ErrorOr;
 using FluentResults;
 using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -27,15 +25,13 @@ public class AuthenticationController : ApiController
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterRequest request)
     {
-        var command = _mapper.Map<RegisterCommand>(request);
-
+        RegisterCommand command = _mapper.Map<RegisterCommand>(request);
+        
         Result<AuthenticationResult> registerResult = await _mediator.Send(command);
 
-        if (registerResult.IsSuccess)
-        {
-            Ok(_mapper.Map<AuthenticationResponse>(registerResult));
-        }
-
+        if (registerResult.IsSuccess) 
+            return Ok(_mapper.Map<AuthenticationResponse>(registerResult.Value));
+        
         var firstError = registerResult.Errors[0];
         if (firstError is DuplicateEmailError)
         {

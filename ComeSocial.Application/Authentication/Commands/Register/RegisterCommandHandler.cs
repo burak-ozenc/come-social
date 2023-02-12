@@ -25,32 +25,33 @@ internal sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, 
 
     public async Task<Result<AuthenticationResult>> Handle(RegisterCommand command, CancellationToken cancellationToken)
     {
-        // Check user if exists
-        if (await _userService.GetUserByEmailAsync(command.Email) != null)
+        if (await _userService.IsEmailUnique(command.Email) is false)
         {
             return Result.Fail<AuthenticationResult>(new DuplicateEmailError());
         }
 
-        // create an user
-        var user = new ApplicationUser()
+        var user = new ApplicationUser
         {
             FirstName = command.FirstName,
             LastName = command.LastName,
             UserName = command.UserName,
-            Email = command.Email
+            Email = command.Email,
+            Password = command.Password
         };
-
-
-        // TODO
-        // handle errors
+        
         var result = await _userService.CreateUser(user);
 
-        // persist to db
-        _userRepository.AddUser(user);
+        if(result.IsSuccess)
+        {
+            var token = _jwtTokenGenerator.GenerateToken(user);
 
-        // create JWT token
-        var token = _jwtTokenGenerator.GenerateToken(user);
+            return Result.Ok(new AuthenticationResult(user, token));
+        }
+        
+        var errors = result.Errors.Select(error => error.Message);
+        
+        return Result.Fail<AuthenticationResult>(errors);
 
-        return new AuthenticationResult(user, token);
+
     }
 }

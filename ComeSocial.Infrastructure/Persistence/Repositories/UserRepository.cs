@@ -14,19 +14,26 @@ public class UserRepository : IUserRepository
         _dbContext = dbContext;
     }
 
-    public void AddUser(ApplicationUser user)
+    public async Task AddUser(ApplicationUser user)
     {
-        _dbContext.Users.Add(user);
-        _dbContext.SaveChanges();
+        await _dbContext.Users.AddAsync(user);
+        await _dbContext.SaveChangesAsync();
     }
     
     public ApplicationUser GetUserByEmail(string email)
     {
         return _dbContext.Users?.FirstOrDefault(u => u.Email == email);
     }
-    public async Task<ApplicationUser?> GetUserByEmailAsync(string email)
+    
+    
+    public async Task<ApplicationUser> GetUserByEmailAsync(string email)
     {
         return await _dbContext.Users?.FirstOrDefaultAsync(u => u.Email == email);
+    }
+    
+    public async Task<bool> IsEmailUnique(string email)
+    {
+        return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email) == null;
     }
 
 

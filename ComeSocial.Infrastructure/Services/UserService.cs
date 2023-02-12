@@ -1,7 +1,10 @@
-﻿using ComeSocial.Application.Common.Interfaces.Persistence;
+﻿using ComeSocial.Application.Common.Errors;
+using ComeSocial.Application.Common.Interfaces.Persistence;
 using ComeSocial.Application.Common.Interfaces.Services;
 using ComeSocial.Domain.Common.Authentication;
+using FluentResults;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ComeSocial.Infrastructure.Services;
 
@@ -10,24 +13,25 @@ public class UserService : IUserService
     
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IUserRepository _userRepository;
-    
 
     public UserService(UserManager<ApplicationUser> userManager, IUserRepository userRepository)
     {
         _userManager = userManager;
         _userRepository = userRepository;
     }
-    public async Task<ApplicationUser> CreateUser(ApplicationUser user)
+    public async Task<Result<ApplicationUser>> CreateUser(ApplicationUser user)
     {
-        if (_userRepository.GetUserByEmailAsync(user.Email) != null)
-            throw new NotImplementedException();
+        if (await _userRepository.IsEmailUnique(user.Email) is false)
+            return Result.Fail<ApplicationUser>(new DuplicateEmailError());
+        
         
         var createUserResult = await _userManager.CreateAsync(user, user.Password);
-        if(createUserResult.Succeeded)
-            return user;
 
-        // HANDLE ERRORS
-        throw new NotImplementedException();
+        if (createUserResult.Succeeded) return Result.Ok(user);
+        var errors = createUserResult.Errors.Select(error => error.Description).ToList();
+
+        return Result.Fail<ApplicationUser>(errors);
+
     }
 
     public ApplicationUser? GetUserByEmail(string email)
@@ -38,5 +42,10 @@ public class UserService : IUserService
     public async Task<ApplicationUser?> GetUserByEmailAsync(string email)
     {
         return await _userRepository.GetUserByEmailAsync(email);
+    }
+
+    public async Task<bool> IsEmailUnique(string email)
+    {
+        return await _userRepository.IsEmailUnique(email);
     }
 }
