@@ -4,7 +4,7 @@ namespace ComeSocial.Application.Common.Errors;
 
 public record struct DuplicateEmailError : IError
 {
-    public string Message => "Email is already in use.";
+    public string Message => "DuplicateEmail";
 
     public Dictionary<string, object> Metadata => throw new NotImplementedException();
 

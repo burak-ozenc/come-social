@@ -21,14 +21,10 @@ public class UserService : IUserService
     }
     public async Task<Result<ApplicationUser>> CreateUser(ApplicationUser user)
     {
-        if (await _userRepository.IsEmailUnique(user.Email) is false)
-            return Result.Fail<ApplicationUser>(new DuplicateEmailError());
-        
-        
         var createUserResult = await _userManager.CreateAsync(user, user.Password);
 
         if (createUserResult.Succeeded) return Result.Ok(user);
-        var errors = createUserResult.Errors.Select(error => error.Description).ToList();
+        var errors = createUserResult.Errors.Select(error => error.Code).ToList();
 
         return Result.Fail<ApplicationUser>(errors);
 

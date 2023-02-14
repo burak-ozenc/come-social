@@ -32,14 +32,13 @@ public class AuthenticationController : ApiController
         if (registerResult.IsSuccess) 
             return Ok(_mapper.Map<AuthenticationResponse>(registerResult.Value));
         
-        var firstError = registerResult.Errors[0];
-        if (firstError is DuplicateEmailError)
-        {
-            return Problem(statusCode: StatusCodes.Status409Conflict, detail: firstError.Message);
-        }
+        var errors = registerResult.Errors.Select(error => error.Message);
+        var errorMap = registerResult.MapErrors(error => error);
+
+        return BadRequest(errors); 
+            // Result<AuthenticationResult>(errors);
 
         // TODO
-        return Problem();
     }
 
     [HttpPost("login")]

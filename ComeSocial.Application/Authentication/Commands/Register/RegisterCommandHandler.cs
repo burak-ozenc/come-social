@@ -13,22 +13,18 @@ internal sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, 
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
     private readonly IUserService _userService;
-    private readonly IUserRepository _userRepository;
 
-    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserService userService,
-        IUserRepository userRepository)
+    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserService userService)
     {
         _jwtTokenGenerator = jwtTokenGenerator;
         _userService = userService;
-        _userRepository = userRepository;
     }
 
     public async Task<Result<AuthenticationResult>> Handle(RegisterCommand command, CancellationToken cancellationToken)
     {
         if (await _userService.IsEmailUnique(command.Email) is false)
-        {
             return Result.Fail<AuthenticationResult>(new DuplicateEmailError());
-        }
+        
 
         var user = new ApplicationUser
         {
@@ -51,7 +47,5 @@ internal sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, 
         var errors = result.Errors.Select(error => error.Message);
         
         return Result.Fail<AuthenticationResult>(errors);
-
-
     }
 }

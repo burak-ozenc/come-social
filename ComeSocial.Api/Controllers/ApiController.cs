@@ -26,7 +26,7 @@ public class ApiController : ControllerBase
             ErrorType.Validation => (int)StatusCodes.Status400BadRequest,
             ErrorType.NotFound => (int)StatusCodes.Status404NotFound,
             _ => (int)StatusCodes.Status500InternalServerError
-        };
+        }; 
         return Problem();
     }
 
