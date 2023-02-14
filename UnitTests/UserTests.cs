@@ -31,7 +31,6 @@ public class UserTests
         
         _mockUserService.Setup(service =>
             service.CreateUser(It.IsAny<ApplicationUser>())).ReturnsAsync(It.IsAny<ApplicationUser>() );
-            // service.GetUserByEmail(It.IsAny<string>())).Returns(It.IsAny<ApplicationUser>());
 
         _mockJwtTokenGenerator.Setup(tokenGen =>
             tokenGen.GenerateToken(It.IsAny<ApplicationUser>())).Returns(It.IsAny<string>());
@@ -64,7 +63,6 @@ public class UserTests
         
         _mockUserService.Setup(service =>
             service.GetUserByEmail(It.IsAny<string>())).Returns(It.IsAny<ApplicationUser>());
-            // service.CreateUser(It.IsAny<ApplicationUser>())).ReturnsAsync(It.IsAny<ApplicationUser>() );
 
         _mockJwtTokenGenerator.Setup(tokenGen =>
             tokenGen.GenerateToken(It.IsAny<ApplicationUser>())).Returns(It.IsAny<string>());
