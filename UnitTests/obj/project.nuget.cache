@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0Zoe4GtO23AO4Y049aI18RtiHuYTNhAH/N+RDr/JbbU3n3EzwB37b1M2j/BB+QeFBXEA40jjf0cH5YUR82q5cg==",
+  "dgSpecHash": "DVX9pcjrJqlbWKxdkYCzmzzZZjOnn6PyMq2GjZLuafzWUBbm8n3Jzxk0c2AFQvklbgnRfrWc+CRy6jgS6fiExA==",
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO\\Projects\\ComeSocial\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
@@ -188,7 +188,10 @@
     "C:\\Users\\LENOVO\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
-    "C:\\Users\\LENOVO\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512"
+    "C:\\Users\\LENOVO\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512"
   ],
   "logs": []
 }

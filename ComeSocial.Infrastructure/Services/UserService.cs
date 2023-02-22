@@ -44,4 +44,9 @@ public class UserService : IUserService
     {
         return await _userRepository.IsEmailUnique(email);
     }
+
+    public async Task<bool> CheckPasswordAsync(ApplicationUser user, string password)
+    {
+        return await _userManager.CheckPasswordAsync(user, password);
+    }
 }

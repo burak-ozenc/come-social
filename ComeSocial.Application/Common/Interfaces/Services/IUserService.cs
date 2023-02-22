@@ -9,4 +9,5 @@ public interface IUserService
     ApplicationUser? GetUserByEmail(string email);
     Task<ApplicationUser?> GetUserByEmailAsync(string email);
     Task<bool> IsEmailUnique(string email);
+    Task<bool> CheckPasswordAsync(ApplicationUser user, string password);
 }

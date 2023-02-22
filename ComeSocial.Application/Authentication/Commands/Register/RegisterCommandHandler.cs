@@ -25,15 +25,14 @@ internal sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, 
         if (await _userService.IsEmailUnique(command.Email) is false)
             return Result.Fail<AuthenticationResult>(new DuplicateEmailError());
         
+        
 
-        var user = new ApplicationUser
-        {
-            FirstName = command.FirstName,
-            LastName = command.LastName,
-            UserName = command.UserName,
-            Email = command.Email,
-            Password = command.Password
-        };
+        var user = ApplicationUser.CreateUser(
+            command.UserName,
+            command.Email,
+            command.FirstName,
+            command.LastName,
+            command.Password);
         
         var result = await _userService.CreateUser(user);
 

@@ -33,7 +33,7 @@ public class AuthenticationController : ApiController
             return Ok(_mapper.Map<AuthenticationResponse>(registerResult.Value));
         
         var errors = registerResult.Errors.Select(error => error.Message);
-        var errorMap = registerResult.MapErrors(error => error);
+        // var errorMap = registerResult.MapErrors(error => error);
 
         return BadRequest(errors); 
             // Result<AuthenticationResult>(errors);
@@ -46,7 +46,7 @@ public class AuthenticationController : ApiController
     {
         var query = _mapper.Map<LoginQuery>(request);
 
-        AuthenticationResult loginResult = await _mediator.Send(query);
+        Result<AuthenticationResult> loginResult = await _mediator.Send(query);
 
         return Ok(_mapper.Map<AuthenticationResponse>(loginResult));
     }
