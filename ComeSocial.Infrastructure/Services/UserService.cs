@@ -1,10 +1,8 @@
-﻿using ComeSocial.Application.Common.Errors;
-using ComeSocial.Application.Common.Interfaces.Persistence;
+﻿using ComeSocial.Application.Common.Interfaces.Persistence;
 using ComeSocial.Application.Common.Interfaces.Services;
 using ComeSocial.Domain.Common.Authentication;
 using FluentResults;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ComeSocial.Infrastructure.Services;
 

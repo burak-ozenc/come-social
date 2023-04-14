@@ -38,7 +38,7 @@ internal sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, 
 
         if(result.IsSuccess)
         {
-            var token = _jwtTokenGenerator.GenerateToken(user);
+            var token = _jwtTokenGenerator.GenerateToken(user); 
 
             return Result.Ok(new AuthenticationResult(user, token));
         }

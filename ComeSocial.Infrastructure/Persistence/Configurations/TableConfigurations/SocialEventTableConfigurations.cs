@@ -20,8 +20,8 @@ internal sealed class SocialEventTableConfigurations : IEntityTypeConfiguration<
     {
         builder.ToTable("SocialEvents");
 
-        builder.HasKey(e => e.Id);
-        builder.Property(e => e.Id)
+        builder.HasKey(e => e.MessageId);
+        builder.Property(e => e.MessageId)
             .ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,

@@ -18,8 +18,8 @@ internal sealed class GroupTableConfigurations : IEntityTypeConfiguration<Group>
     {
         builder.ToTable("Groups");
 
-        builder.HasKey(g => g.Id);
-        builder.Property(g => g.Id)
+        builder.HasKey(g => g.MessageId);
+        builder.Property(g => g.MessageId)
             .ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,
@@ -39,6 +39,8 @@ internal sealed class GroupTableConfigurations : IEntityTypeConfiguration<Group>
 
     private void ConfigureGroupUsersTable(EntityTypeBuilder<Group> builder)
     {
+        // TODO
+        // rename it to GroupMembers
         builder.OwnsMany(g => g.Users, userBuilder =>
             {
                 userBuilder.ToTable("GroupUsers");

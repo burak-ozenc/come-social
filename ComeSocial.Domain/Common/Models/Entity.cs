@@ -3,16 +3,16 @@
 public abstract class Entity<TId> : IEquatable<Entity<TId>>
 where TId : notnull
 {
-    public TId Id { get; protected set; }
+    public TId MessageId { get; protected set; }
 
-    protected Entity(TId id)
+    protected Entity(TId messageId)
     {
-        Id = id;
+        MessageId = messageId;
     }
 
     public override bool Equals(object? obj)
     {
-        return obj is Entity<TId> entity && Id.Equals(entity.Id);
+        return obj is Entity<TId> entity && MessageId.Equals(entity.MessageId);
     }
 
     public bool Equals(Entity<TId>? other)
@@ -32,7 +32,7 @@ where TId : notnull
 
     public override int GetHashCode()
     {
-        return Id.GetHashCode();
+        return MessageId.GetHashCode();
     }
     protected Entity() {}
 }

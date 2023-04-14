@@ -9,12 +9,14 @@ namespace ComeSocial.Domain.Group;
 public sealed class Group : AggregateRoot<GroupId>
 {
     public readonly List<UserId> _users = new();
+    // TODO
     // this field will be auto-filled with users' names
     // later can be changed to mutable field
     public string Name { get; private set; }
     public DateTime SocialEventDate { get; private set; }
     public string GroupAvatar { get; private set; }
     
+    // TODO
     // security tips
     // convert to IList
     // after implementing the ef core

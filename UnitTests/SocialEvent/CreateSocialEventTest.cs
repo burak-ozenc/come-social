@@ -49,7 +49,7 @@ public class CreateSocialEventTest
         // assert
             
         result.ShouldNotBe(null);
-        Assert.NotNull(result.Id);
+        Assert.NotNull(result.MessageId);
         Assert.NotNull(result);
     }
 }

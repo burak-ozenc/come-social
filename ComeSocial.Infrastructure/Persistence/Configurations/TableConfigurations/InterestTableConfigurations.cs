@@ -17,8 +17,8 @@ internal sealed class InterestTableConfigurations : IEntityTypeConfiguration<Int
     {
         builder.ToTable("Interests");
 
-        builder.HasKey(i => i.Id);
-        builder.Property(i => i.Id)
+        builder.HasKey(i => i.MessageId);
+        builder.Property(i => i.MessageId)
             .ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,

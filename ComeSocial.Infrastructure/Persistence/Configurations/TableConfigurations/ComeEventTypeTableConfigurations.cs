@@ -16,8 +16,8 @@ internal sealed class ComeEventTypeTableConfigurations : IEntityTypeConfiguratio
     {
         builder.ToTable("ComeEventTypes");
 
-        builder.HasKey(e => e.Id);
-        builder.Property(e => e.Id)
+        builder.HasKey(e => e.MessageId);
+        builder.Property(e => e.MessageId)
             .ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,

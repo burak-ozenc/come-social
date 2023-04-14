@@ -9,6 +9,7 @@ using ComeSocial.Infrastructure.Persistence.Configurations.IdentityConfiguration
 using ComeSocial.Infrastructure.Persistence.Repositories;
 using ComeSocial.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -30,6 +31,19 @@ public static class DependencyInjection
         return services;
     }
 
+    public static IApplicationBuilder AddMessageProvider(this IApplicationBuilder app)
+    {
+        
+        var webSocketOptions = new WebSocketOptions
+        {
+            KeepAliveInterval = TimeSpan.FromMinutes(2)
+        };
+        
+        app.UseWebSockets(webSocketOptions);
+
+        return app;
+    }
+
     public static IServiceCollection AddPersistence(
         this IServiceCollection services,
         ConfigurationManager configuration)
@@ -37,13 +51,25 @@ public static class DependencyInjection
         services.AddDbContext<ComeSocialDbContext>(options => options
             .UseSqlServer(configuration.GetConnectionString("sqlConnection"),
                 dbOptions => dbOptions.EnableRetryOnFailure()));
+        // repository conf
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<ITagRepository, TagRepository>();
         services.AddScoped<ISocialEventRepository, SocialEventRepository>();
         services.AddScoped<IComeEventTypeRepository, ComeEventTypeRepository>();
         services.AddScoped<IInterestRepository, InterestRepository>();
         services.AddScoped<IGroupRepository, GroupRepository>();
+        
+        // service conf
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IMessageService, MessageService>();
+        
+        // signalR conf
+        services.AddSignalR(hubOptions =>
+        {
+            hubOptions.EnableDetailedErrors = true;
+            hubOptions.KeepAliveInterval = TimeSpan.FromMinutes(5);
+        });
+        services.AddSingleton<MessageService>();
 
 
         return services;

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ComeSocial.Infrastructure.Persistence;
-
+    
 public sealed class ComeSocialDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 {
     public ComeSocialDbContext(DbContextOptions<ComeSocialDbContext> options ) : base(options){}

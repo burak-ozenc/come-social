@@ -19,7 +19,7 @@ public class SocialEventMappingConfig : IRegister
                 src => src.SocialEventTypes.ConvertAll(cet => cet.Id));
 
         config.NewConfig<SocialEvent, CreateSocialEventResponse>()
-            .Map(dest => dest.Id, src => src.Id.Value)
+            .Map(dest => dest.Id, src => src.MessageId.Value)
             .Map(dest => dest.Tags, 
                 src => src.Tags.Select(tag => tag))
             .Map(dest => dest.ComeEventTypes, 
